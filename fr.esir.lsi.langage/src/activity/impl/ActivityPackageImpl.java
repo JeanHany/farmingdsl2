@@ -5,6 +5,7 @@ package activity.impl;
 import activity.Activity;
 import activity.ActivityFactory;
 import activity.ActivityPackage;
+import activity.Activités;
 import activity.Date;
 import activity.Model;
 import activity.Month;
@@ -95,6 +96,13 @@ public class ActivityPackageImpl extends EPackageImpl implements ActivityPackage
 	 * @generated
 	 */
 	private EEnum periodiciteEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum activitésEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -239,17 +247,8 @@ public class ActivityPackageImpl extends EPackageImpl implements ActivityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getActivity_Name() {
-		return (EAttribute)activityEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getActivity_Res_alloc() {
-		return (EReference)activityEClass.getEStructuralFeatures().get(2);
+		return (EReference)activityEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -258,7 +257,7 @@ public class ActivityPackageImpl extends EPackageImpl implements ActivityPackage
 	 * @generated
 	 */
 	public EReference getActivity_Rule() {
-		return (EReference)activityEClass.getEStructuralFeatures().get(3);
+		return (EReference)activityEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -267,7 +266,7 @@ public class ActivityPackageImpl extends EPackageImpl implements ActivityPackage
 	 * @generated
 	 */
 	public EReference getActivity_Fin() {
-		return (EReference)activityEClass.getEStructuralFeatures().get(4);
+		return (EReference)activityEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -276,7 +275,7 @@ public class ActivityPackageImpl extends EPackageImpl implements ActivityPackage
 	 * @generated
 	 */
 	public EReference getActivity_Debut() {
-		return (EReference)activityEClass.getEStructuralFeatures().get(5);
+		return (EReference)activityEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -285,7 +284,16 @@ public class ActivityPackageImpl extends EPackageImpl implements ActivityPackage
 	 * @generated
 	 */
 	public EReference getActivity_Atelier() {
-		return (EReference)activityEClass.getEStructuralFeatures().get(6);
+		return (EReference)activityEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getActivity_Activités() {
+		return (EAttribute)activityEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -401,6 +409,15 @@ public class ActivityPackageImpl extends EPackageImpl implements ActivityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getActivités() {
+		return activitésEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ActivityFactory getActivityFactory() {
 		return (ActivityFactory)getEFactoryInstance();
 	}
@@ -435,12 +452,12 @@ public class ActivityPackageImpl extends EPackageImpl implements ActivityPackage
 
 		activityEClass = createEClass(ACTIVITY);
 		createEAttribute(activityEClass, ACTIVITY__PERIODICITE);
-		createEAttribute(activityEClass, ACTIVITY__NAME);
 		createEReference(activityEClass, ACTIVITY__RES_ALLOC);
 		createEReference(activityEClass, ACTIVITY__RULE);
 		createEReference(activityEClass, ACTIVITY__FIN);
 		createEReference(activityEClass, ACTIVITY__DEBUT);
 		createEReference(activityEClass, ACTIVITY__ATELIER);
+		createEAttribute(activityEClass, ACTIVITY__ACTIVITÉS);
 
 		modelEClass = createEClass(MODEL);
 		createEReference(modelEClass, MODEL__EREFERENCE0);
@@ -458,6 +475,7 @@ public class ActivityPackageImpl extends EPackageImpl implements ActivityPackage
 		// Create enums
 		monthEEnum = createEEnum(MONTH);
 		periodiciteEEnum = createEEnum(PERIODICITE);
+		activitésEEnum = createEEnum(ACTIVITÉS);
 	}
 
 	/**
@@ -504,12 +522,12 @@ public class ActivityPackageImpl extends EPackageImpl implements ActivityPackage
 
 		initEClass(activityEClass, Activity.class, "Activity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getActivity_Periodicite(), this.getPeriodicite(), "periodicite", null, 0, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getActivity_Name(), ecorePackage.getEString(), "Name", null, 0, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActivity_Res_alloc(), this.getRes_Alloc(), null, "res_alloc", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActivity_Rule(), this.getRule(), null, "rule", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActivity_Fin(), this.getDate(), null, "fin", null, 1, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActivity_Debut(), this.getDate(), null, "debut", null, 1, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActivity_Atelier(), theExploitationPackage.getAtelier(), null, "atelier", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getActivity_Activités(), this.getActivités(), "activités", null, 0, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getModel_EReference0(), this.getModel(), null, "EReference0", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -543,6 +561,17 @@ public class ActivityPackageImpl extends EPackageImpl implements ActivityPackage
 		addEEnumLiteral(periodiciteEEnum, Periodicite.DAILY);
 		addEEnumLiteral(periodiciteEEnum, Periodicite.WEEKLY);
 		addEEnumLiteral(periodiciteEEnum, Periodicite.MONTHLY);
+
+		initEEnum(activitésEEnum, Activités.class, "Activités");
+		addEEnumLiteral(activitésEEnum, Activités.LABOUR);
+		addEEnumLiteral(activitésEEnum, Activités.SEMIS);
+		addEEnumLiteral(activitésEEnum, Activités.IRRIGATGION);
+		addEEnumLiteral(activitésEEnum, Activités.FERTILISATION);
+		addEEnumLiteral(activitésEEnum, Activités.RECOLTE);
+		addEEnumLiteral(activitésEEnum, Activités.ALIMENTATION);
+		addEEnumLiteral(activitésEEnum, Activités.TRAITE);
+		addEEnumLiteral(activitésEEnum, Activités.SURVEILLANCE_AGNELAGE);
+		addEEnumLiteral(activitésEEnum, Activités.SURVEILLANGE_VELAGE);
 
 		// Create resource
 		createResource(eNS_URI);

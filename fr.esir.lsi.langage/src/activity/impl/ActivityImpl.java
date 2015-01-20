@@ -4,6 +4,7 @@ package activity.impl;
 
 import activity.Activity;
 import activity.ActivityPackage;
+import activity.Activités;
 import activity.Date;
 import activity.Periodicite;
 import activity.Res_Alloc;
@@ -36,12 +37,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link activity.impl.ActivityImpl#getPeriodicite <em>Periodicite</em>}</li>
- *   <li>{@link activity.impl.ActivityImpl#getName <em>Name</em>}</li>
  *   <li>{@link activity.impl.ActivityImpl#getRes_alloc <em>Res alloc</em>}</li>
  *   <li>{@link activity.impl.ActivityImpl#getRule <em>Rule</em>}</li>
  *   <li>{@link activity.impl.ActivityImpl#getFin <em>Fin</em>}</li>
  *   <li>{@link activity.impl.ActivityImpl#getDebut <em>Debut</em>}</li>
  *   <li>{@link activity.impl.ActivityImpl#getAtelier <em>Atelier</em>}</li>
+ *   <li>{@link activity.impl.ActivityImpl#getActivités <em>Activités</em>}</li>
  * </ul>
  * </p>
  *
@@ -67,26 +68,6 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * @ordered
 	 */
 	protected Periodicite periodicite = PERIODICITE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getRes_alloc() <em>Res alloc</em>}' containment reference list.
@@ -139,6 +120,26 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	protected EList<Atelier> atelier;
 
 	/**
+	 * The default value of the '{@link #getActivités() <em>Activités</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getActivités()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Activités ACTIVITÉS_EDEFAULT = Activités.LABOUR;
+
+	/**
+	 * The cached value of the '{@link #getActivités() <em>Activités</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getActivités()
+	 * @generated
+	 * @ordered
+	 */
+	protected Activités activités = ACTIVITÉS_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -176,27 +177,6 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 		periodicite = newPeriodicite == null ? PERIODICITE_EDEFAULT : newPeriodicite;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ActivityPackage.ACTIVITY__PERIODICITE, oldPeriodicite, periodicite));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActivityPackage.ACTIVITY__NAME, oldName, name));
 	}
 
 	/**
@@ -326,6 +306,27 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Activités getActivités() {
+		return activités;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setActivités(Activités newActivités) {
+		Activités oldActivités = activités;
+		activités = newActivités == null ? ACTIVITÉS_EDEFAULT : newActivités;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ActivityPackage.ACTIVITY__ACTIVITÉS, oldActivités, activités));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -351,8 +352,6 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 		switch (featureID) {
 			case ActivityPackage.ACTIVITY__PERIODICITE:
 				return getPeriodicite();
-			case ActivityPackage.ACTIVITY__NAME:
-				return getName();
 			case ActivityPackage.ACTIVITY__RES_ALLOC:
 				return getRes_alloc();
 			case ActivityPackage.ACTIVITY__RULE:
@@ -363,6 +362,8 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 				return getDebut();
 			case ActivityPackage.ACTIVITY__ATELIER:
 				return getAtelier();
+			case ActivityPackage.ACTIVITY__ACTIVITÉS:
+				return getActivités();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -378,9 +379,6 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 		switch (featureID) {
 			case ActivityPackage.ACTIVITY__PERIODICITE:
 				setPeriodicite((Periodicite)newValue);
-				return;
-			case ActivityPackage.ACTIVITY__NAME:
-				setName((String)newValue);
 				return;
 			case ActivityPackage.ACTIVITY__RES_ALLOC:
 				getRes_alloc().clear();
@@ -400,6 +398,9 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 				getAtelier().clear();
 				getAtelier().addAll((Collection<? extends Atelier>)newValue);
 				return;
+			case ActivityPackage.ACTIVITY__ACTIVITÉS:
+				setActivités((Activités)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -414,9 +415,6 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 		switch (featureID) {
 			case ActivityPackage.ACTIVITY__PERIODICITE:
 				setPeriodicite(PERIODICITE_EDEFAULT);
-				return;
-			case ActivityPackage.ACTIVITY__NAME:
-				setName(NAME_EDEFAULT);
 				return;
 			case ActivityPackage.ACTIVITY__RES_ALLOC:
 				getRes_alloc().clear();
@@ -433,6 +431,9 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 			case ActivityPackage.ACTIVITY__ATELIER:
 				getAtelier().clear();
 				return;
+			case ActivityPackage.ACTIVITY__ACTIVITÉS:
+				setActivités(ACTIVITÉS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -447,8 +448,6 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 		switch (featureID) {
 			case ActivityPackage.ACTIVITY__PERIODICITE:
 				return periodicite != PERIODICITE_EDEFAULT;
-			case ActivityPackage.ACTIVITY__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ActivityPackage.ACTIVITY__RES_ALLOC:
 				return res_alloc != null && !res_alloc.isEmpty();
 			case ActivityPackage.ACTIVITY__RULE:
@@ -459,6 +458,8 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 				return debut != null;
 			case ActivityPackage.ACTIVITY__ATELIER:
 				return atelier != null && !atelier.isEmpty();
+			case ActivityPackage.ACTIVITY__ACTIVITÉS:
+				return activités != ACTIVITÉS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -475,8 +476,8 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (periodicite: ");
 		result.append(periodicite);
-		result.append(", Name: ");
-		result.append(name);
+		result.append(", activités: ");
+		result.append(activités);
 		result.append(')');
 		return result.toString();
 	}

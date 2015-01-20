@@ -12,7 +12,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Activity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="periodicite" eType="#//Periodicite"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="res_alloc" upperBound="-1"
         eType="#//Res_Alloc" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rule" upperBound="-1" eType="#//Rule"
@@ -23,6 +22,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="atelier" upperBound="-1"
         eType="ecore:EClass Exploitation.ecore#//Atelier"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="activités" eType="#//Activités"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Model">
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//Model"/>
@@ -58,5 +58,16 @@
     <eLiterals name="Daily"/>
     <eLiterals name="Weekly" value="1"/>
     <eLiterals name="Monthly" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Activités">
+    <eLiterals name="labour" literal="Labour"/>
+    <eLiterals name="semis" value="1" literal="semis"/>
+    <eLiterals name="irrigatgion" value="2"/>
+    <eLiterals name="fertilisation" value="3" literal="fertilisation"/>
+    <eLiterals name="recolte" value="4" literal="recolte"/>
+    <eLiterals name="ALIMENTATION" value="5" literal="ALIMENTATION"/>
+    <eLiterals name="traite" value="6" literal="traite"/>
+    <eLiterals name="surveillance_agnelage" literal="surveillance_agnelage"/>
+    <eLiterals name="surveillange_velage" literal="surveillange_velage"/>
   </eClassifiers>
 </ecore:EPackage>

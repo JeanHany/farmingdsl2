@@ -81,6 +81,8 @@ public class ActivityFactoryImpl extends EFactoryImpl implements ActivityFactory
 				return createMonthFromString(eDataType, initialValue);
 			case ActivityPackage.PERIODICITE:
 				return createPeriodiciteFromString(eDataType, initialValue);
+			case ActivityPackage.ACTIVITÉS:
+				return createActivitésFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -98,6 +100,8 @@ public class ActivityFactoryImpl extends EFactoryImpl implements ActivityFactory
 				return convertMonthToString(eDataType, instanceValue);
 			case ActivityPackage.PERIODICITE:
 				return convertPeriodiciteToString(eDataType, instanceValue);
+			case ActivityPackage.ACTIVITÉS:
+				return convertActivitésToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -210,6 +214,26 @@ public class ActivityFactoryImpl extends EFactoryImpl implements ActivityFactory
 	 * @generated
 	 */
 	public String convertPeriodiciteToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Activités createActivitésFromString(EDataType eDataType, String initialValue) {
+		Activités result = Activités.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertActivitésToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

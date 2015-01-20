@@ -7,6 +7,7 @@ import activity.Activity;
 import activity.ActivityFactory;
 import activity.ActivityPackage;
 
+import activity.Periodicite;
 import java.util.Collection;
 import java.util.List;
 
@@ -64,8 +65,8 @@ public class ActivityItemProvider
 			super.getPropertyDescriptors(object);
 
 			addPeriodicitePropertyDescriptor(object);
-			addNamePropertyDescriptor(object);
 			addAtelierPropertyDescriptor(object);
+			addActivitésPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -93,28 +94,6 @@ public class ActivityItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Activity_Name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Activity_Name_feature", "_UI_Activity_type"),
-				 ActivityPackage.Literals.ACTIVITY__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Atelier feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -132,6 +111,28 @@ public class ActivityItemProvider
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Activités feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addActivitésPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Activity_activités_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Activity_activités_feature", "_UI_Activity_type"),
+				 ActivityPackage.Literals.ACTIVITY__ACTIVITÉS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -188,7 +189,8 @@ public class ActivityItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Activity)object).getName();
+		Periodicite labelValue = ((Activity)object).getPeriodicite();
+		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Activity_type") :
 			getString("_UI_Activity_type") + " " + label;
@@ -208,7 +210,7 @@ public class ActivityItemProvider
 
 		switch (notification.getFeatureID(Activity.class)) {
 			case ActivityPackage.ACTIVITY__PERIODICITE:
-			case ActivityPackage.ACTIVITY__NAME:
+			case ActivityPackage.ACTIVITY__ACTIVITÉS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ActivityPackage.ACTIVITY__RES_ALLOC:

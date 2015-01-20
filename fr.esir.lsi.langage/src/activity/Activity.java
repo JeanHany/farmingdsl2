@@ -17,12 +17,12 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link activity.Activity#getPeriodicite <em>Periodicite</em>}</li>
- *   <li>{@link activity.Activity#getName <em>Name</em>}</li>
  *   <li>{@link activity.Activity#getRes_alloc <em>Res alloc</em>}</li>
  *   <li>{@link activity.Activity#getRule <em>Rule</em>}</li>
  *   <li>{@link activity.Activity#getFin <em>Fin</em>}</li>
  *   <li>{@link activity.Activity#getDebut <em>Debut</em>}</li>
  *   <li>{@link activity.Activity#getAtelier <em>Atelier</em>}</li>
+ *   <li>{@link activity.Activity#getActivités <em>Activités</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,32 +59,6 @@ public interface Activity extends EObject {
 	 * @generated
 	 */
 	void setPeriodicite(Periodicite value);
-
-	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see activity.ActivityPackage#getActivity_Name()
-	 * @model
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link activity.Activity#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Res alloc</b></em>' containment reference list.
@@ -185,5 +159,34 @@ public interface Activity extends EObject {
 	 * @generated
 	 */
 	EList<Atelier> getAtelier();
+
+	/**
+	 * Returns the value of the '<em><b>Activités</b></em>' attribute.
+	 * The literals are from the enumeration {@link activity.Activités}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Activités</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Activités</em>' attribute.
+	 * @see activity.Activités
+	 * @see #setActivités(Activités)
+	 * @see activity.ActivityPackage#getActivity_Activités()
+	 * @model
+	 * @generated
+	 */
+	Activités getActivités();
+
+	/**
+	 * Sets the value of the '{@link activity.Activity#getActivités <em>Activités</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Activités</em>' attribute.
+	 * @see activity.Activités
+	 * @see #getActivités()
+	 * @generated
+	 */
+	void setActivités(Activités value);
 
 } // Activity

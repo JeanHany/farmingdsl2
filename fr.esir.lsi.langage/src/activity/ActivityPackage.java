@@ -188,22 +188,13 @@ public interface ActivityPackage extends EPackage {
 	int ACTIVITY__PERIODICITE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTIVITY__NAME = 1;
-
-	/**
 	 * The feature id for the '<em><b>Res alloc</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY__RES_ALLOC = 2;
+	int ACTIVITY__RES_ALLOC = 1;
 
 	/**
 	 * The feature id for the '<em><b>Rule</b></em>' containment reference list.
@@ -212,7 +203,7 @@ public interface ActivityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY__RULE = 3;
+	int ACTIVITY__RULE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Fin</b></em>' containment reference.
@@ -221,7 +212,7 @@ public interface ActivityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY__FIN = 4;
+	int ACTIVITY__FIN = 3;
 
 	/**
 	 * The feature id for the '<em><b>Debut</b></em>' containment reference.
@@ -230,7 +221,7 @@ public interface ActivityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY__DEBUT = 5;
+	int ACTIVITY__DEBUT = 4;
 
 	/**
 	 * The feature id for the '<em><b>Atelier</b></em>' reference list.
@@ -239,7 +230,16 @@ public interface ActivityPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY__ATELIER = 6;
+	int ACTIVITY__ATELIER = 5;
+
+	/**
+	 * The feature id for the '<em><b>Activités</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY__ACTIVITÉS = 6;
 
 	/**
 	 * The number of structural features of the '<em>Activity</em>' class.
@@ -428,6 +428,17 @@ public interface ActivityPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link activity.Activités <em>Activités</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see activity.Activités
+	 * @see activity.impl.ActivityPackageImpl#getActivités()
+	 * @generated
+	 */
+	int ACTIVITÉS = 9;
+
+
+	/**
 	 * Returns the meta object for class '{@link activity.ResourceType <em>Resource Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -512,17 +523,6 @@ public interface ActivityPackage extends EPackage {
 	EAttribute getActivity_Periodicite();
 
 	/**
-	 * Returns the meta object for the attribute '{@link activity.Activity#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see activity.Activity#getName()
-	 * @see #getActivity()
-	 * @generated
-	 */
-	EAttribute getActivity_Name();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link activity.Activity#getRes_alloc <em>Res alloc</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -576,6 +576,17 @@ public interface ActivityPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getActivity_Atelier();
+
+	/**
+	 * Returns the meta object for the attribute '{@link activity.Activity#getActivités <em>Activités</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Activités</em>'.
+	 * @see activity.Activity#getActivités()
+	 * @see #getActivity()
+	 * @generated
+	 */
+	EAttribute getActivity_Activités();
 
 	/**
 	 * Returns the meta object for class '{@link activity.Model <em>Model</em>}'.
@@ -705,6 +716,16 @@ public interface ActivityPackage extends EPackage {
 	EEnum getPeriodicite();
 
 	/**
+	 * Returns the meta object for enum '{@link activity.Activités <em>Activités</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Activités</em>'.
+	 * @see activity.Activités
+	 * @generated
+	 */
+	EEnum getActivités();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -800,14 +821,6 @@ public interface ActivityPackage extends EPackage {
 		EAttribute ACTIVITY__PERIODICITE = eINSTANCE.getActivity_Periodicite();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ACTIVITY__NAME = eINSTANCE.getActivity_Name();
-
-		/**
 		 * The meta object literal for the '<em><b>Res alloc</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -846,6 +859,14 @@ public interface ActivityPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ACTIVITY__ATELIER = eINSTANCE.getActivity_Atelier();
+
+		/**
+		 * The meta object literal for the '<em><b>Activités</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACTIVITY__ACTIVITÉS = eINSTANCE.getActivity_Activités();
 
 		/**
 		 * The meta object literal for the '{@link activity.impl.ModelImpl <em>Model</em>}' class.
@@ -952,6 +973,16 @@ public interface ActivityPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum PERIODICITE = eINSTANCE.getPeriodicite();
+
+		/**
+		 * The meta object literal for the '{@link activity.Activités <em>Activités</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see activity.Activités
+		 * @see activity.impl.ActivityPackageImpl#getActivités()
+		 * @generated
+		 */
+		EEnum ACTIVITÉS = eINSTANCE.getActivités();
 
 	}
 
