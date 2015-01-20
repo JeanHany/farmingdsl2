@@ -2,29 +2,22 @@
  */
 package activity.impl;
 
+import activity.Activites;
 import activity.Activity;
 import activity.ActivityPackage;
-import activity.Activités;
 import activity.Date;
 import activity.Periodicite;
 import activity.Res_Alloc;
 import activity.Rule;
-
 import exploitation.Atelier;
-
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -42,7 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link activity.impl.ActivityImpl#getFin <em>Fin</em>}</li>
  *   <li>{@link activity.impl.ActivityImpl#getDebut <em>Debut</em>}</li>
  *   <li>{@link activity.impl.ActivityImpl#getAtelier <em>Atelier</em>}</li>
- *   <li>{@link activity.impl.ActivityImpl#getActivités <em>Activités</em>}</li>
+ *   <li>{@link activity.impl.ActivityImpl#getActivites <em>Activites</em>}</li>
  * </ul>
  * </p>
  *
@@ -57,7 +50,7 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Periodicite PERIODICITE_EDEFAULT = Periodicite.DAILY;
+	protected static final Periodicite PERIODICITE_EDEFAULT = Periodicite.HALF_DAILY;
 
 	/**
 	 * The cached value of the '{@link #getPeriodicite() <em>Periodicite</em>}' attribute.
@@ -120,24 +113,24 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	protected EList<Atelier> atelier;
 
 	/**
-	 * The default value of the '{@link #getActivités() <em>Activités</em>}' attribute.
+	 * The default value of the '{@link #getActivites() <em>Activites</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getActivités()
+	 * @see #getActivites()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Activités ACTIVITÉS_EDEFAULT = Activités.LABOUR;
+	protected static final Activites ACTIVITES_EDEFAULT = Activites.LABOUR;
 
 	/**
-	 * The cached value of the '{@link #getActivités() <em>Activités</em>}' attribute.
+	 * The cached value of the '{@link #getActivites() <em>Activites</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getActivités()
+	 * @see #getActivites()
 	 * @generated
 	 * @ordered
 	 */
-	protected Activités activités = ACTIVITÉS_EDEFAULT;
+	protected Activites activites = ACTIVITES_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -306,8 +299,8 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Activités getActivités() {
-		return activités;
+	public Activites getActivites() {
+		return activites;
 	}
 
 	/**
@@ -315,11 +308,11 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setActivités(Activités newActivités) {
-		Activités oldActivités = activités;
-		activités = newActivités == null ? ACTIVITÉS_EDEFAULT : newActivités;
+	public void setActivites(Activites newActivites) {
+		Activites oldActivites = activites;
+		activites = newActivites == null ? ACTIVITES_EDEFAULT : newActivites;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ActivityPackage.ACTIVITY__ACTIVITÉS, oldActivités, activités));
+			eNotify(new ENotificationImpl(this, Notification.SET, ActivityPackage.ACTIVITY__ACTIVITES, oldActivites, activites));
 	}
 
 	/**
@@ -362,8 +355,8 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 				return getDebut();
 			case ActivityPackage.ACTIVITY__ATELIER:
 				return getAtelier();
-			case ActivityPackage.ACTIVITY__ACTIVITÉS:
-				return getActivités();
+			case ActivityPackage.ACTIVITY__ACTIVITES:
+				return getActivites();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -398,8 +391,8 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 				getAtelier().clear();
 				getAtelier().addAll((Collection<? extends Atelier>)newValue);
 				return;
-			case ActivityPackage.ACTIVITY__ACTIVITÉS:
-				setActivités((Activités)newValue);
+			case ActivityPackage.ACTIVITY__ACTIVITES:
+				setActivites((Activites)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -431,8 +424,8 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 			case ActivityPackage.ACTIVITY__ATELIER:
 				getAtelier().clear();
 				return;
-			case ActivityPackage.ACTIVITY__ACTIVITÉS:
-				setActivités(ACTIVITÉS_EDEFAULT);
+			case ActivityPackage.ACTIVITY__ACTIVITES:
+				setActivites(ACTIVITES_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -458,8 +451,8 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 				return debut != null;
 			case ActivityPackage.ACTIVITY__ATELIER:
 				return atelier != null && !atelier.isEmpty();
-			case ActivityPackage.ACTIVITY__ACTIVITÉS:
-				return activités != ACTIVITÉS_EDEFAULT;
+			case ActivityPackage.ACTIVITY__ACTIVITES:
+				return activites != ACTIVITES_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -476,8 +469,8 @@ public class ActivityImpl extends MinimalEObjectImpl.Container implements Activi
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (periodicite: ");
 		result.append(periodicite);
-		result.append(", activités: ");
-		result.append(activités);
+		result.append(", activites: ");
+		result.append(activites);
 		result.append(')');
 		return result.toString();
 	}

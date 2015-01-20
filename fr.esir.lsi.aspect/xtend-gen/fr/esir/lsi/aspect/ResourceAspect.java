@@ -9,8 +9,7 @@ import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 public class ResourceAspect {
   public static void simulate(final Ressource _self) {
     _self_ = fr.esir.lsi.aspect.ResourceAspectRessourceAspectContext.getSelf(_self);
-    	    
-    	      _privk3_simulate(_self); 
+    _privk3_simulate(_self);
   }
   
   public static ResourceAspectRessourceAspectProperties _self_;

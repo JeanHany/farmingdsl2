@@ -66,7 +66,7 @@ public class ActivityItemProvider
 
 			addPeriodicitePropertyDescriptor(object);
 			addAtelierPropertyDescriptor(object);
-			addActivitésPropertyDescriptor(object);
+			addActivitesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -116,19 +116,19 @@ public class ActivityItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Activités feature.
+	 * This adds a property descriptor for the Activites feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addActivitésPropertyDescriptor(Object object) {
+	protected void addActivitesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Activity_activités_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Activity_activités_feature", "_UI_Activity_type"),
-				 ActivityPackage.Literals.ACTIVITY__ACTIVITÉS,
+				 getString("_UI_Activity_activites_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Activity_activites_feature", "_UI_Activity_type"),
+				 ActivityPackage.Literals.ACTIVITY__ACTIVITES,
 				 true,
 				 false,
 				 false,
@@ -210,7 +210,7 @@ public class ActivityItemProvider
 
 		switch (notification.getFeatureID(Activity.class)) {
 			case ActivityPackage.ACTIVITY__PERIODICITE:
-			case ActivityPackage.ACTIVITY__ACTIVITÉS:
+			case ActivityPackage.ACTIVITY__ACTIVITES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ActivityPackage.ACTIVITY__RES_ALLOC:

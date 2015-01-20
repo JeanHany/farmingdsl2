@@ -3,4 +3,4 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Aspect
 Bundle-SymbolicName: fr.esir.lsi.aspect
 Bundle-Version: 1.0.0.qualifier
-Require-Bundle: fr.inria.diverse.k3.al.annotationprocessor.plugin;bundle-version="3.0.0"
+Require-Bundle: fr.inria.diverse.k3.al.annotationprocessor.plugin;bundle-version="3.1.0"

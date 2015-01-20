@@ -233,13 +233,13 @@ public interface ActivityPackage extends EPackage {
 	int ACTIVITY__ATELIER = 5;
 
 	/**
-	 * The feature id for the '<em><b>Activités</b></em>' attribute.
+	 * The feature id for the '<em><b>Activites</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY__ACTIVITÉS = 6;
+	int ACTIVITY__ACTIVITES = 6;
 
 	/**
 	 * The number of structural features of the '<em>Activity</em>' class.
@@ -428,15 +428,14 @@ public interface ActivityPackage extends EPackage {
 
 
 	/**
-	 * The meta object id for the '{@link activity.Activités <em>Activités</em>}' enum.
+	 * The meta object id for the '{@link activity.Activites <em>Activites</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see activity.Activités
-	 * @see activity.impl.ActivityPackageImpl#getActivités()
+	 * @see activity.Activites
+	 * @see activity.impl.ActivityPackageImpl#getActivites()
 	 * @generated
 	 */
-	int ACTIVITÉS = 9;
-
+	int ACTIVITES = 9;
 
 	/**
 	 * Returns the meta object for class '{@link activity.ResourceType <em>Resource Type</em>}'.
@@ -578,15 +577,15 @@ public interface ActivityPackage extends EPackage {
 	EReference getActivity_Atelier();
 
 	/**
-	 * Returns the meta object for the attribute '{@link activity.Activity#getActivités <em>Activités</em>}'.
+	 * Returns the meta object for the attribute '{@link activity.Activity#getActivites <em>Activites</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Activités</em>'.
-	 * @see activity.Activity#getActivités()
+	 * @return the meta object for the attribute '<em>Activites</em>'.
+	 * @see activity.Activity#getActivites()
 	 * @see #getActivity()
 	 * @generated
 	 */
-	EAttribute getActivity_Activités();
+	EAttribute getActivity_Activites();
 
 	/**
 	 * Returns the meta object for class '{@link activity.Model <em>Model</em>}'.
@@ -716,14 +715,14 @@ public interface ActivityPackage extends EPackage {
 	EEnum getPeriodicite();
 
 	/**
-	 * Returns the meta object for enum '{@link activity.Activités <em>Activités</em>}'.
+	 * Returns the meta object for enum '{@link activity.Activites <em>Activites</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Activités</em>'.
-	 * @see activity.Activités
+	 * @return the meta object for enum '<em>Activites</em>'.
+	 * @see activity.Activites
 	 * @generated
 	 */
-	EEnum getActivités();
+	EEnum getActivites();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -861,12 +860,12 @@ public interface ActivityPackage extends EPackage {
 		EReference ACTIVITY__ATELIER = eINSTANCE.getActivity_Atelier();
 
 		/**
-		 * The meta object literal for the '<em><b>Activités</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Activites</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ACTIVITY__ACTIVITÉS = eINSTANCE.getActivity_Activités();
+		EAttribute ACTIVITY__ACTIVITES = eINSTANCE.getActivity_Activites();
 
 		/**
 		 * The meta object literal for the '{@link activity.impl.ModelImpl <em>Model</em>}' class.
@@ -975,14 +974,14 @@ public interface ActivityPackage extends EPackage {
 		EEnum PERIODICITE = eINSTANCE.getPeriodicite();
 
 		/**
-		 * The meta object literal for the '{@link activity.Activités <em>Activités</em>}' enum.
+		 * The meta object literal for the '{@link activity.Activites <em>Activites</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see activity.Activités
-		 * @see activity.impl.ActivityPackageImpl#getActivités()
+		 * @see activity.Activites
+		 * @see activity.impl.ActivityPackageImpl#getActivites()
 		 * @generated
 		 */
-		EEnum ACTIVITÉS = eINSTANCE.getActivités();
+		EEnum ACTIVITES = eINSTANCE.getActivites();
 
 	}
 

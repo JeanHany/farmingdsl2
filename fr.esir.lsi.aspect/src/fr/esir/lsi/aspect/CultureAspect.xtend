@@ -5,5 +5,5 @@ import exploitation.Culture
 
 @Aspect (className=Culture)
 class CultureAspect {
-	
+		
 }

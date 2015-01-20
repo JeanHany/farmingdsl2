@@ -19,37 +19,60 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum Periodicite implements Enumerator {
 	/**
-	 * The '<em><b>Daily</b></em>' literal object.
+	 * The '<em><b>HALF DAILY</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #HALF_DAILY_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	HALF_DAILY(0, "HALF_DAILY", "half_daily"), /**
+	 * The '<em><b>DAILY</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #DAILY_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	DAILY(0, "Daily", "Daily"),
+	DAILY(1, "DAILY", "DAILY"),
 
 	/**
-	 * The '<em><b>Weekly</b></em>' literal object.
+	 * The '<em><b>WEEKLY</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #WEEKLY_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	WEEKLY(1, "Weekly", "Weekly"),
+	WEEKLY(2, "WEEKLY", "WEEKLY"),
 
 	/**
-	 * The '<em><b>Monthly</b></em>' literal object.
+	 * The '<em><b>MONTHLY</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #MONTHLY_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	MONTHLY(2, "Monthly", "Monthly");
+	MONTHLY(3, "MONTHLY", "MONTHLY");
 
 	/**
-	 * The '<em><b>Daily</b></em>' literal value.
+	 * The '<em><b>HALF DAILY</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>HALF DAILY</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #HALF_DAILY
+	 * @model literal="half_daily"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int HALF_DAILY_VALUE = 0;
+
+	/**
+	 * The '<em><b>DAILY</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>Daily</b></em>' literal object isn't clear,
@@ -57,14 +80,14 @@ public enum Periodicite implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #DAILY
-	 * @model name="Daily"
+	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DAILY_VALUE = 0;
+	public static final int DAILY_VALUE = 1;
 
 	/**
-	 * The '<em><b>Weekly</b></em>' literal value.
+	 * The '<em><b>WEEKLY</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>Weekly</b></em>' literal object isn't clear,
@@ -72,14 +95,14 @@ public enum Periodicite implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #WEEKLY
-	 * @model name="Weekly"
+	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int WEEKLY_VALUE = 1;
+	public static final int WEEKLY_VALUE = 2;
 
 	/**
-	 * The '<em><b>Monthly</b></em>' literal value.
+	 * The '<em><b>MONTHLY</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>Monthly</b></em>' literal object isn't clear,
@@ -87,11 +110,11 @@ public enum Periodicite implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #MONTHLY
-	 * @model name="Monthly"
+	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MONTHLY_VALUE = 2;
+	public static final int MONTHLY_VALUE = 3;
 
 	/**
 	 * An array of all the '<em><b>Periodicite</b></em>' enumerators.
@@ -101,6 +124,7 @@ public enum Periodicite implements Enumerator {
 	 */
 	private static final Periodicite[] VALUES_ARRAY =
 		new Periodicite[] {
+			HALF_DAILY,
 			DAILY,
 			WEEKLY,
 			MONTHLY,
@@ -154,6 +178,7 @@ public enum Periodicite implements Enumerator {
 	 */
 	public static Periodicite get(int value) {
 		switch (value) {
+			case HALF_DAILY_VALUE: return HALF_DAILY;
 			case DAILY_VALUE: return DAILY;
 			case WEEKLY_VALUE: return WEEKLY;
 			case MONTHLY_VALUE: return MONTHLY;

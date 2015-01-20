@@ -22,7 +22,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="atelier" upperBound="-1"
         eType="ecore:EClass Exploitation.ecore#//Atelier"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="activités" eType="#//Activités"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="activites" eType="#//Activites"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Model">
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//Model"/>
@@ -41,33 +41,34 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Month">
-    <eLiterals name="January"/>
-    <eLiterals name="February" value="1"/>
-    <eLiterals name="March" value="2"/>
-    <eLiterals name="April" value="3"/>
-    <eLiterals name="May" value="4"/>
-    <eLiterals name="June" value="5"/>
-    <eLiterals name="July" value="6"/>
-    <eLiterals name="August" value="7"/>
-    <eLiterals name="September" value="8"/>
-    <eLiterals name="October" value="9"/>
-    <eLiterals name="November" value="10"/>
-    <eLiterals name="December" value="11"/>
+    <eLiterals name="JANUARY"/>
+    <eLiterals name="FEBRARY" value="1"/>
+    <eLiterals name="MARCH" value="2"/>
+    <eLiterals name="APRIL" value="3"/>
+    <eLiterals name="MAY" value="4"/>
+    <eLiterals name="JUNE" value="5"/>
+    <eLiterals name="JULY" value="6"/>
+    <eLiterals name="AUGUST" value="7"/>
+    <eLiterals name="SEPTEMBER" value="8"/>
+    <eLiterals name="OCTOBER" value="9"/>
+    <eLiterals name="NOVEMBER" value="10"/>
+    <eLiterals name="DECEMBER" value="11"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Periodicite">
-    <eLiterals name="Daily"/>
-    <eLiterals name="Weekly" value="1"/>
-    <eLiterals name="Monthly" value="2"/>
+    <eLiterals name="HALF_DAILY" literal="half_daily"/>
+    <eLiterals name="DAILY" value="1"/>
+    <eLiterals name="WEEKLY" value="2"/>
+    <eLiterals name="MONTHLY" value="3"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="Activités">
-    <eLiterals name="labour" literal="Labour"/>
-    <eLiterals name="semis" value="1" literal="semis"/>
-    <eLiterals name="irrigatgion" value="2"/>
-    <eLiterals name="fertilisation" value="3" literal="fertilisation"/>
-    <eLiterals name="recolte" value="4" literal="recolte"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="Activites">
+    <eLiterals name="LABOUR" literal="labour"/>
+    <eLiterals name="SEMIS" value="1" literal="semis"/>
+    <eLiterals name="IRRIGATION" value="2" literal="irrigation"/>
+    <eLiterals name="FERTILISATION" value="3" literal="fertilisation"/>
+    <eLiterals name="RECOLTE" value="4" literal="recolte"/>
     <eLiterals name="ALIMENTATION" value="5" literal="ALIMENTATION"/>
-    <eLiterals name="traite" value="6" literal="traite"/>
-    <eLiterals name="surveillance_agnelage" literal="surveillance_agnelage"/>
-    <eLiterals name="surveillange_velage" literal="surveillange_velage"/>
+    <eLiterals name="TRAITE" value="6" literal="traite"/>
+    <eLiterals name="SURVEILLANCE_AGNELAGE" value="7" literal="surveillance_agnelage"/>
+    <eLiterals name="SURVEILLANCE_VELAGE" value="8" literal="surveillange_velage"/>
   </eClassifiers>
 </ecore:EPackage>

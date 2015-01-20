@@ -2,10 +2,10 @@
  */
 package activity.impl;
 
+import activity.Activites;
 import activity.Activity;
 import activity.ActivityFactory;
 import activity.ActivityPackage;
-import activity.Activités;
 import activity.Date;
 import activity.Model;
 import activity.Month;
@@ -14,17 +14,13 @@ import activity.Predicat;
 import activity.Res_Alloc;
 import activity.ResourceType;
 import activity.Rule;
-
 import exploitation.ExploitationPackage;
-
 import exploitation.impl.ExploitationPackageImpl;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -102,7 +98,7 @@ public class ActivityPackageImpl extends EPackageImpl implements ActivityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum activitésEEnum = null;
+	private EEnum activitesEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -292,7 +288,7 @@ public class ActivityPackageImpl extends EPackageImpl implements ActivityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getActivity_Activités() {
+	public EAttribute getActivity_Activites() {
 		return (EAttribute)activityEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -409,8 +405,8 @@ public class ActivityPackageImpl extends EPackageImpl implements ActivityPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getActivités() {
-		return activitésEEnum;
+	public EEnum getActivites() {
+		return activitesEEnum;
 	}
 
 	/**
@@ -457,7 +453,7 @@ public class ActivityPackageImpl extends EPackageImpl implements ActivityPackage
 		createEReference(activityEClass, ACTIVITY__FIN);
 		createEReference(activityEClass, ACTIVITY__DEBUT);
 		createEReference(activityEClass, ACTIVITY__ATELIER);
-		createEAttribute(activityEClass, ACTIVITY__ACTIVITÉS);
+		createEAttribute(activityEClass, ACTIVITY__ACTIVITES);
 
 		modelEClass = createEClass(MODEL);
 		createEReference(modelEClass, MODEL__EREFERENCE0);
@@ -475,7 +471,7 @@ public class ActivityPackageImpl extends EPackageImpl implements ActivityPackage
 		// Create enums
 		monthEEnum = createEEnum(MONTH);
 		periodiciteEEnum = createEEnum(PERIODICITE);
-		activitésEEnum = createEEnum(ACTIVITÉS);
+		activitesEEnum = createEEnum(ACTIVITES);
 	}
 
 	/**
@@ -527,7 +523,7 @@ public class ActivityPackageImpl extends EPackageImpl implements ActivityPackage
 		initEReference(getActivity_Fin(), this.getDate(), null, "fin", null, 1, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActivity_Debut(), this.getDate(), null, "debut", null, 1, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getActivity_Atelier(), theExploitationPackage.getAtelier(), null, "atelier", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getActivity_Activités(), this.getActivités(), "activités", null, 0, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getActivity_Activites(), this.getActivites(), "activites", null, 0, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getModel_EReference0(), this.getModel(), null, "EReference0", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -545,7 +541,7 @@ public class ActivityPackageImpl extends EPackageImpl implements ActivityPackage
 		// Initialize enums and add enum literals
 		initEEnum(monthEEnum, Month.class, "Month");
 		addEEnumLiteral(monthEEnum, Month.JANUARY);
-		addEEnumLiteral(monthEEnum, Month.FEBRUARY);
+		addEEnumLiteral(monthEEnum, Month.FEBRARY);
 		addEEnumLiteral(monthEEnum, Month.MARCH);
 		addEEnumLiteral(monthEEnum, Month.APRIL);
 		addEEnumLiteral(monthEEnum, Month.MAY);
@@ -558,20 +554,21 @@ public class ActivityPackageImpl extends EPackageImpl implements ActivityPackage
 		addEEnumLiteral(monthEEnum, Month.DECEMBER);
 
 		initEEnum(periodiciteEEnum, Periodicite.class, "Periodicite");
+		addEEnumLiteral(periodiciteEEnum, Periodicite.HALF_DAILY);
 		addEEnumLiteral(periodiciteEEnum, Periodicite.DAILY);
 		addEEnumLiteral(periodiciteEEnum, Periodicite.WEEKLY);
 		addEEnumLiteral(periodiciteEEnum, Periodicite.MONTHLY);
 
-		initEEnum(activitésEEnum, Activités.class, "Activités");
-		addEEnumLiteral(activitésEEnum, Activités.LABOUR);
-		addEEnumLiteral(activitésEEnum, Activités.SEMIS);
-		addEEnumLiteral(activitésEEnum, Activités.IRRIGATGION);
-		addEEnumLiteral(activitésEEnum, Activités.FERTILISATION);
-		addEEnumLiteral(activitésEEnum, Activités.RECOLTE);
-		addEEnumLiteral(activitésEEnum, Activités.ALIMENTATION);
-		addEEnumLiteral(activitésEEnum, Activités.TRAITE);
-		addEEnumLiteral(activitésEEnum, Activités.SURVEILLANCE_AGNELAGE);
-		addEEnumLiteral(activitésEEnum, Activités.SURVEILLANGE_VELAGE);
+		initEEnum(activitesEEnum, Activites.class, "Activites");
+		addEEnumLiteral(activitesEEnum, Activites.LABOUR);
+		addEEnumLiteral(activitesEEnum, Activites.SEMIS);
+		addEEnumLiteral(activitesEEnum, Activites.IRRIGATION);
+		addEEnumLiteral(activitesEEnum, Activites.FERTILISATION);
+		addEEnumLiteral(activitesEEnum, Activites.RECOLTE);
+		addEEnumLiteral(activitesEEnum, Activites.ALIMENTATION);
+		addEEnumLiteral(activitesEEnum, Activites.TRAITE);
+		addEEnumLiteral(activitesEEnum, Activites.SURVEILLANCE_AGNELAGE);
+		addEEnumLiteral(activitesEEnum, Activites.SURVEILLANCE_VELAGE);
 
 		// Create resource
 		createResource(eNS_URI);

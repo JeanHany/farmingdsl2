@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link activity.Activity#getFin <em>Fin</em>}</li>
  *   <li>{@link activity.Activity#getDebut <em>Debut</em>}</li>
  *   <li>{@link activity.Activity#getAtelier <em>Atelier</em>}</li>
- *   <li>{@link activity.Activity#getActivités <em>Activités</em>}</li>
+ *   <li>{@link activity.Activity#getActivites <em>Activites</em>}</li>
  * </ul>
  * </p>
  *
@@ -161,32 +161,32 @@ public interface Activity extends EObject {
 	EList<Atelier> getAtelier();
 
 	/**
-	 * Returns the value of the '<em><b>Activités</b></em>' attribute.
-	 * The literals are from the enumeration {@link activity.Activités}.
+	 * Returns the value of the '<em><b>Activites</b></em>' attribute.
+	 * The literals are from the enumeration {@link activity.Activites}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Activités</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Activites</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Activités</em>' attribute.
-	 * @see activity.Activités
-	 * @see #setActivités(Activités)
-	 * @see activity.ActivityPackage#getActivity_Activités()
+	 * @return the value of the '<em>Activites</em>' attribute.
+	 * @see activity.Activites
+	 * @see #setActivites(Activites)
+	 * @see activity.ActivityPackage#getActivity_Activites()
 	 * @model
 	 * @generated
 	 */
-	Activités getActivités();
+	Activites getActivites();
 
 	/**
-	 * Sets the value of the '{@link activity.Activity#getActivités <em>Activités</em>}' attribute.
+	 * Sets the value of the '{@link activity.Activity#getActivites <em>Activites</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Activités</em>' attribute.
-	 * @see activity.Activités
-	 * @see #getActivités()
+	 * @param value the new value of the '<em>Activites</em>' attribute.
+	 * @see activity.Activites
+	 * @see #getActivites()
 	 * @generated
 	 */
-	void setActivités(Activités value);
+	void setActivites(Activites value);
 
 } // Activity

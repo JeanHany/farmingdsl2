@@ -81,8 +81,8 @@ public class ActivityFactoryImpl extends EFactoryImpl implements ActivityFactory
 				return createMonthFromString(eDataType, initialValue);
 			case ActivityPackage.PERIODICITE:
 				return createPeriodiciteFromString(eDataType, initialValue);
-			case ActivityPackage.ACTIVITÉS:
-				return createActivitésFromString(eDataType, initialValue);
+			case ActivityPackage.ACTIVITES:
+				return createActivitesFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -100,8 +100,8 @@ public class ActivityFactoryImpl extends EFactoryImpl implements ActivityFactory
 				return convertMonthToString(eDataType, instanceValue);
 			case ActivityPackage.PERIODICITE:
 				return convertPeriodiciteToString(eDataType, instanceValue);
-			case ActivityPackage.ACTIVITÉS:
-				return convertActivitésToString(eDataType, instanceValue);
+			case ActivityPackage.ACTIVITES:
+				return convertActivitesToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -222,8 +222,8 @@ public class ActivityFactoryImpl extends EFactoryImpl implements ActivityFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Activités createActivitésFromString(EDataType eDataType, String initialValue) {
-		Activités result = Activités.get(initialValue);
+	public Activites createActivitesFromString(EDataType eDataType, String initialValue) {
+		Activites result = Activites.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -233,7 +233,7 @@ public class ActivityFactoryImpl extends EFactoryImpl implements ActivityFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertActivitésToString(EDataType eDataType, Object instanceValue) {
+	public String convertActivitesToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

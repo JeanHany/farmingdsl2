@@ -5,7 +5,7 @@ import activity.Activity
 import exploitation.Culture
 import exploitation.Elevage
 
-@Aspect (className = Activity)
+@Aspect (className=Activity)
 class ActivityAspect {
 	
 	def simulate(){
