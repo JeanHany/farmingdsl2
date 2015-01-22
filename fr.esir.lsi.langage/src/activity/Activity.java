@@ -3,9 +3,9 @@
 package activity;
 
 import exploitation.Atelier;
+import fr.esir.lsi.aspect.Visiteur;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -188,5 +188,211 @@ public interface Activity extends EObject {
 	 * @generated
 	 */
 	void setActivites(Activites value);
+	
+	default String parcours(){
+		Visiteur visit = new Visiteur();
+		EList<Atelier> atel = getAtelier();		
+		Activites activities = getActivites();
+		switch (activities) {
+		case ALIMENTATION : testalimentation(visit);
+		break;
+		case SURVEILLANCEAGNELAGE : testSurv(visit);
+		break;
+		case SURVEILLANGEVELAGE : testSurv2(visit);
+		break;
+		case TRAITE : testTraite(visit);
+		break;
+		case IRRIGATGION : testirrigation(visit);
+		break;
+		case LABOUR : testLabour(visit);
+		break;
+		case SEMIS : testSemis(visit);
+		break;
+		case RECOLTE : testrecolte(visit);
+		break;
+		case FERTILISATION : testTraite(visit);
+		break;
+		default : testculture(visit);
+		break;
+		}
+		System.out.println(visit.getHumain()+" "+visit.getTracteur());
+
+		return visit.getHumain()+" "+visit.getTracteur();
+	}
+
+	default void testalimentation(Visiteur visit){
+		if(visit.getMois() >= 3 && visit.getJour() >= 1 
+				&& visit.getMois() <= 12 && visit.getJour() <= 30){
+			visit.setHumain(visit.getHumain() + 1/2);
+			visit.getHm().add("alimentation");
+		}
+		
+	}
+
+	//TODO test date
+	default void testTraite(Visiteur visit){
+		if(visit.getMois() >= 3 && visit.getJour() >= 1 
+				&& visit.getMois() <= 12 && visit.getJour() <= 30){
+			visit.setHumain(visit.getHumain() + 1/2);
+		}
+	}
+
+	default void testSurv(Visiteur visit){
+		if(visit.getMois() >= 5 && visit.getJour() >= 1
+				&& visit.getMois() <= 5 && visit.getJour() <= 8){
+			visit.setHumain(visit.getHumain() + 1);
+		}
+	}
+
+	default void testSurv2(Visiteur visit){
+		if(visit.getMois() >= 12 && visit.getJour() >= 1
+				&& visit.getMois() <= 12 && visit.getJour() <= 8){
+			visit.setHumain(visit.getHumain() + 1);
+		}
+	}
+
+	//TODO todo
+	default void testirrigation(Visiteur vist){
+		
+	}
+	
+	default void testLabour(Visiteur visit){
+		if(visit.getMois() >= getDebut().getMonth().ordinal() && visit.getJour() >= getDebut().getDay() 
+				&& visit.getMois() <= getFin().getMonth().ordinal() && visit.getJour() <= getFin().getDay()){
+			visit.setHumain(visit.getHumain() + 1);
+			visit.setTracteur(visit.getTracteur()+ 1);
+			visit.getHm().add("labour");
+		}
+	}
+		
+		default void testSemis(Visiteur visit){
+			if(visit.getMois() >= getDebut().getMonth().ordinal() && visit.getJour() >= getDebut().getDay() 
+					&& visit.getMois() <= getFin().getMonth().ordinal() && visit.getJour() <= getFin().getDay()){
+				visit.setHumain(visit.getHumain() + 1);
+				visit.setTracteur(visit.getTracteur()+ 1);
+				visit.getHm().add("semis");
+			}
+		}
+			
+			default void testrecolte(Visiteur visit){
+				if(visit.getMois() >= getDebut().getMonth().ordinal() && visit.getJour() >= getDebut().getDay() 
+						&& visit.getMois() <= getFin().getMonth().ordinal() && visit.getJour() <= getFin().getDay()){
+					visit.setHumain(visit.getHumain() + 1);
+					visit.setTracteur(visit.getTracteur()+ 1);
+					visit.getHm().add("recolte");
+				}
+			}
+//		int difjour = getFin().getDay() - getDebut().getDay();
+//		int difmois =  getFin().getMonth().ordinal() - getDebut().getMonth().ordinal();
+//		int result = difjour + difmois * 30	;
+//		visit.setHumain(visit.getHumain() + result);
+		
+	
+	default void testculture(Visiteur visit){
+		int difjour = getFin().getDay() - getDebut().getDay();
+		int difmois =  getFin().getMonth().ordinal() - getDebut().getMonth().ordinal();
+		int result = difjour + difmois * 30	;
+		visit.setHumain(visit.getHumain() + result);
+		visit.setTracteur(visit.getTracteur()+result);
+	}
+	//	def test_culture(Culture culture, Visiteur vist){
+	//		val cereal = culture.cereals
+	//		vist.setHumain(vist.getHumain + 1)
+	//		vist.setTracteur(vist.getTracteur + 1)
+	//		switch (cereal) {
+	//			case CORN : test_mais(_self)
+	//			case WHEAT: test_wheat(_self)
+	//			case SORGHUM : test_sorghum(_self)
+	//			default : true
+	//		}
+	//	}
+
+	//	def test_elevage(Visiteur vist){
+	//		val name = _self.activites
+	//		switch (name) {
+	//			case ALIMENTATION : test_alimentation(_self, vist)
+	//			case TRAITE : test_traite(_self, vist)
+	//			case SURVEILLANCEAGNELAGE : test_surveillance_a(_self, vist)
+	//			case SURVEILLANGEVELAGE : test_surveillance_v(_self, vist)
+	//			default : true
+	//		}
+	//	}
+
+
+	//		
+	//	def test_wheat() {
+	//		val name = _self.activites
+	//		switch (name) {
+	//			case LABOUR : test_labour(_self)
+	//			case SEMIS : test_semis(_self)
+	//			case IRRIGATGION : test_irrigation(_self)
+	//			case RECOLTE : test_recolte(_self)
+	//			case FERTILISATION : test_fertilisation(_self)
+	//			default : true
+	//		}
+	//	}
+	//	
+	//	
+	//	
+	//	
+	//	
+	//	def test_culture(Culture culture, Visiteur vist){
+	//		val cereal = culture.cereals
+	//		vist.setHumain(vist.getHumain + 1)
+	//		vist.setTracteur(vist.getTracteur + 1)
+	//		switch (cereal) {
+	//			case CORN : test_mais(_self)
+	//			case WHEAT: test_wheat(_self)
+	//			case SORGHUM : test_sorghum(_self)
+	//			default : true
+	//		}
+	//	}
+	//	
+	//	def test_elevage(Visiteur vist){
+	//		val name = _self.activites
+	//		switch (name) {
+	//			case ALIMENTATION : test_alimentation(_self, vist)
+	//			case TRAITE : test_traite(_self, vist)
+	//			case SURVEILLANCEAGNELAGE : test_surveillance_a(_self, vist)
+	//			case SURVEILLANGEVELAGE : test_surveillance_v(_self, vist)
+	//			default : true
+	//		}
+	//	}
+	//	
+	//	
+	//		
+	//	def test_wheat() {
+	//		val name = _self.activites
+	//		switch (name) {
+	//			case LABOUR : test_labour(_self)
+	//			case SEMIS : test_semis(_self)
+	//			case IRRIGATGION : test_irrigation(_self)
+	//			case RECOLTE : test_recolte(_self)
+	//			case FERTILISATION : test_fertilisation(_self)
+	//			default : true
+	//		}
+	//	}
+	//	
+	//	
+	//	def test_alimentation(Visiteur vist){
+	//		val fin = _self.debut
+	//		val debut = _self.fin
+	//		val difjour = fin.day - debut.day
+	//		val difmois = fin.month.ordinal - debut.month.ordinal
+	//		val result = difjour + difmois * 30	
+	//		vist.setHumain(vist.getHumain + result/2)	
+	//	}
+	//	
+	//	def test_traite(Visiteur vist){
+	//		vist.setHumain(vist.getHumain + 10*30/2)	
+	//	}
+	//	
+	//	def test_surveillance_a(Visiteur vist){
+	//		vist.setHumain(vist.getHumain + 7)
+	//	}
+	//	
+	//	def test_surveillance_v(Visiteur vist){
+	//		vist.setHumain(vist.getHumain + 7)
+	//	}
 
 } // Activity

@@ -27,6 +27,7 @@ import org.eclipse.emf.common.util.Monitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -68,17 +69,28 @@ public class Main {
 			ArrayList<Donneejour> donj = ParserCSV.parse();
 //			for(Donneejour j : donj){
 //				
+////			}
+//			XMIResourceFactoryImpl fact2 = new XMIResourceFactoryImpl();
+//
+//			if (!EPackage.Registry.INSTANCE.containsKey(ActivityPackage.eNS_URI)) {
+//				EPackage.Registry.INSTANCE.put(ActivityPackage.eNS_URI, ActivityPackage.eINSTANCE);
 //			}
-			String result = act.parcours();	
+//			Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("*", fact);
+//			ResourceSetImpl rs2 = new ResourceSetImpl();
+//			String uri2 = "/home/jean/Documents/git/runtime-EclipseApplication/Test/src/test.mydsl";
+//			URI modelURI2 = URI.createFileURI(uri2);
+//			Resource res2 = rs2.getResource(modelURI2, true);
+//			Activity act2 = ((Activity) res2.getContents().get(0)); 
+//			String result = act.parcours();	
 			if (!file.exists()) {
 				file.createNewFile();
 			}
 
 			FileWriter fw = new FileWriter(file.getAbsoluteFile());
 			BufferedWriter bw = new BufferedWriter(fw);
-			bw.write(result);
+//			bw.write(result);
 			bw.close();
-			System.out.println(result);
+//			System.out.println(result);
 			String[] nbjour = null;
 			File file2 = new File("/home/jean/Documents/git/runtime-EclipseApplication/Test/src-gen/greetings.txt");
 		    Scanner scanner = new Scanner(new FileReader(file2));
@@ -96,20 +108,20 @@ public class Main {
 		        scanner.close();
 		    }
 		    
-		    String[] nbjour2 = result.split(" ");
-		    double nb = Double.parseDouble(nbjour[0]);
-		    double nb2 = Double.parseDouble(nbjour2[0]);
-		    int nb1 = Integer.parseInt(nbjour[1]);
-		    int nb21 = Integer.parseInt(nbjour2[1]);
-		    
-		    
-		    
-		    
-		    if(nb > nb2 && nb1 > nb21){
-		    	System.out.println("Exploitation fail");
-		    }else{
-		    	System.out.println("Exploitation succes");
-		    }
+//		    String[] nbjour2 = result.split(" ");
+//		    double nb = Double.parseDouble(nbjour[0]);
+//		    double nb2 = Double.parseDouble(nbjour2[0]);
+//		    int nb1 = Integer.parseInt(nbjour[1]);
+//		    int nb21 = Integer.parseInt(nbjour2[1]);
+//		    
+//		    
+//		    
+//		    
+//		    if(nb > nb2 && nb1 > nb21){
+//		    	System.out.println("Exploitation fail");
+//		    }else{
+//		    	System.out.println("Exploitation succes");
+//		    }
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

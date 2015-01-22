@@ -16,3 +16,4 @@ Export-Package: activity,
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy
+Import-Package: fr.esir.lsi.aspect
