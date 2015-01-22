@@ -28,9 +28,9 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cPeriodiciteAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final RuleCall cPeriodicitePeriodiciteEnumRuleCall_2_1_0 = (RuleCall)cPeriodiciteAssignment_2_1.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cNameKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cNameAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cNameEStringParserRuleCall_3_1_0 = (RuleCall)cNameAssignment_3_1.eContents().get(0);
+		private final Keyword cActivitesKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cActivitesAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cActivitesActivitesEnumRuleCall_3_1_0 = (RuleCall)cActivitesAssignment_3_1.eContents().get(0);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cAtelierKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
@@ -72,16 +72,16 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		
 		//Activity:
-		//	"Activity" "{" ("periodicite" periodicite=Periodicite)? ("Name" Name=EString)? ("atelier" "("
+		//	("Activity" "{" ("periodicite" periodicite=Periodicite)? ("activites" activites=Activites) ("atelier" "("
 		//	atelier+=[exploitation::Atelier|EString] ("," atelier+=[exploitation::Atelier|EString])* ")")? ("res_alloc" "{"
 		//	res_alloc+=Res_Alloc ("," res_alloc+=Res_Alloc)* "}")? ("rule" "{" rule+=Rule ("," rule+=Rule)* "}")? "fin" fin=Date
-		//	"debut" debut=Date "}";
+		//	"debut" debut=Date "}")*;
 		public ParserRule getRule() { return rule; }
 
-		//"Activity" "{" ("periodicite" periodicite=Periodicite)? ("Name" Name=EString)? ("atelier" "("
+		//("Activity" "{" ("periodicite" periodicite=Periodicite)? ("activites" activites=Activites) ("atelier" "("
 		//atelier+=[exploitation::Atelier|EString] ("," atelier+=[exploitation::Atelier|EString])* ")")? ("res_alloc" "{"
 		//res_alloc+=Res_Alloc ("," res_alloc+=Res_Alloc)* "}")? ("rule" "{" rule+=Rule ("," rule+=Rule)* "}")? "fin" fin=Date
-		//"debut" debut=Date "}"
+		//"debut" debut=Date "}")*
 		public Group getGroup() { return cGroup; }
 
 		//"Activity"
@@ -102,17 +102,17 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Periodicite
 		public RuleCall getPeriodicitePeriodiciteEnumRuleCall_2_1_0() { return cPeriodicitePeriodiciteEnumRuleCall_2_1_0; }
 
-		//("Name" Name=EString)?
+		//"activites" activites=Activites
 		public Group getGroup_3() { return cGroup_3; }
 
-		//"Name"
-		public Keyword getNameKeyword_3_0() { return cNameKeyword_3_0; }
+		//"activites"
+		public Keyword getActivitesKeyword_3_0() { return cActivitesKeyword_3_0; }
 
-		//Name=EString
-		public Assignment getNameAssignment_3_1() { return cNameAssignment_3_1; }
+		//activites=Activites
+		public Assignment getActivitesAssignment_3_1() { return cActivitesAssignment_3_1; }
 
-		//EString
-		public RuleCall getNameEStringParserRuleCall_3_1_0() { return cNameEStringParserRuleCall_3_1_0; }
+		//Activites
+		public RuleCall getActivitesActivitesEnumRuleCall_3_1_0() { return cActivitesActivitesEnumRuleCall_3_1_0; }
 
 		//("atelier" "(" atelier+=[exploitation::Atelier|EString] ("," atelier+=[exploitation::Atelier|EString])* ")")?
 		public Group getGroup_4() { return cGroup_4; }
@@ -254,26 +254,6 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Culture
 		public RuleCall getCultureParserRuleCall_2() { return cCultureParserRuleCall_2; }
-	}
-
-	public class EStringElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EString");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cSTRINGTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//EString returns ecore::EString:
-		//	STRING | ID;
-		public ParserRule getRule() { return rule; }
-
-		//STRING | ID
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//STRING
-		public RuleCall getSTRINGTerminalRuleCall_0() { return cSTRINGTerminalRuleCall_0; }
-
-		//ID
-		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
 	}
 
 	public class Res_AllocElements extends AbstractParserRuleElementFinder {
@@ -596,6 +576,26 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 
+	public class EStringElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EString");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cSTRINGTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//EString returns ecore::EString:
+		//	STRING | ID;
+		public ParserRule getRule() { return rule; }
+
+		//STRING | ID
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//STRING
+		public RuleCall getSTRINGTerminalRuleCall_0() { return cSTRINGTerminalRuleCall_0; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
+	}
+
 	public class RessourceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Ressource");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -679,17 +679,21 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cElevageKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cActivityKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cActivityAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final CrossReference cActivityActivityCrossReference_3_1_0 = (CrossReference)cActivityAssignment_3_1.eContents().get(0);
-		private final RuleCall cActivityActivityEStringParserRuleCall_3_1_0_1 = (RuleCall)cActivityActivityCrossReference_3_1_0.eContents().get(1);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cAnimalsKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cAnimalsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cAnimalsAnimalsEnumRuleCall_3_1_0 = (RuleCall)cAnimalsAssignment_3_1.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cActivityKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cActivityAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final CrossReference cActivityActivityCrossReference_4_1_0 = (CrossReference)cActivityAssignment_4_1.eContents().get(0);
+		private final RuleCall cActivityActivityEStringParserRuleCall_4_1_0_1 = (RuleCall)cActivityActivityCrossReference_4_1_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Elevage returns exploitation::Elevage:
-		//	{exploitation::Elevage} "Elevage" "{" ("activity" activity=[Activity|EString])? "}";
+		//	{exploitation::Elevage} "Elevage" "{" ("animals" animals=Animals)? ("activity" activity=[Activity|EString])? "}";
 		public ParserRule getRule() { return rule; }
 
-		//{exploitation::Elevage} "Elevage" "{" ("activity" activity=[Activity|EString])? "}"
+		//{exploitation::Elevage} "Elevage" "{" ("animals" animals=Animals)? ("activity" activity=[Activity|EString])? "}"
 		public Group getGroup() { return cGroup; }
 
 		//{exploitation::Elevage}
@@ -701,23 +705,35 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//("activity" activity=[Activity|EString])?
+		//("animals" animals=Animals)?
 		public Group getGroup_3() { return cGroup_3; }
 
+		//"animals"
+		public Keyword getAnimalsKeyword_3_0() { return cAnimalsKeyword_3_0; }
+
+		//animals=Animals
+		public Assignment getAnimalsAssignment_3_1() { return cAnimalsAssignment_3_1; }
+
+		//Animals
+		public RuleCall getAnimalsAnimalsEnumRuleCall_3_1_0() { return cAnimalsAnimalsEnumRuleCall_3_1_0; }
+
+		//("activity" activity=[Activity|EString])?
+		public Group getGroup_4() { return cGroup_4; }
+
 		//"activity"
-		public Keyword getActivityKeyword_3_0() { return cActivityKeyword_3_0; }
+		public Keyword getActivityKeyword_4_0() { return cActivityKeyword_4_0; }
 
 		//activity=[Activity|EString]
-		public Assignment getActivityAssignment_3_1() { return cActivityAssignment_3_1; }
+		public Assignment getActivityAssignment_4_1() { return cActivityAssignment_4_1; }
 
 		//[Activity|EString]
-		public CrossReference getActivityActivityCrossReference_3_1_0() { return cActivityActivityCrossReference_3_1_0; }
+		public CrossReference getActivityActivityCrossReference_4_1_0() { return cActivityActivityCrossReference_4_1_0; }
 
 		//EString
-		public RuleCall getActivityActivityEStringParserRuleCall_3_1_0_1() { return cActivityActivityEStringParserRuleCall_3_1_0_1; }
+		public RuleCall getActivityActivityEStringParserRuleCall_4_1_0_1() { return cActivityActivityEStringParserRuleCall_4_1_0_1; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 
 	public class CultureElements extends AbstractParserRuleElementFinder {
@@ -727,17 +743,21 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cCultureKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cActivityKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cActivityAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final CrossReference cActivityActivityCrossReference_3_1_0 = (CrossReference)cActivityAssignment_3_1.eContents().get(0);
-		private final RuleCall cActivityActivityEStringParserRuleCall_3_1_0_1 = (RuleCall)cActivityActivityCrossReference_3_1_0.eContents().get(1);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cCerealsKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cCerealsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cCerealsCerealEnumRuleCall_3_1_0 = (RuleCall)cCerealsAssignment_3_1.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cActivityKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cActivityAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final CrossReference cActivityActivityCrossReference_4_1_0 = (CrossReference)cActivityAssignment_4_1.eContents().get(0);
+		private final RuleCall cActivityActivityEStringParserRuleCall_4_1_0_1 = (RuleCall)cActivityActivityCrossReference_4_1_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Culture returns exploitation::Culture:
-		//	{exploitation::Culture} "Culture" "{" ("activity" activity=[Activity|EString])? "}";
+		//	{exploitation::Culture} "Culture" "{" ("cereals" cereals=Cereal)? ("activity" activity=[Activity|EString])? "}";
 		public ParserRule getRule() { return rule; }
 
-		//{exploitation::Culture} "Culture" "{" ("activity" activity=[Activity|EString])? "}"
+		//{exploitation::Culture} "Culture" "{" ("cereals" cereals=Cereal)? ("activity" activity=[Activity|EString])? "}"
 		public Group getGroup() { return cGroup; }
 
 		//{exploitation::Culture}
@@ -749,23 +769,35 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//("activity" activity=[Activity|EString])?
+		//("cereals" cereals=Cereal)?
 		public Group getGroup_3() { return cGroup_3; }
 
+		//"cereals"
+		public Keyword getCerealsKeyword_3_0() { return cCerealsKeyword_3_0; }
+
+		//cereals=Cereal
+		public Assignment getCerealsAssignment_3_1() { return cCerealsAssignment_3_1; }
+
+		//Cereal
+		public RuleCall getCerealsCerealEnumRuleCall_3_1_0() { return cCerealsCerealEnumRuleCall_3_1_0; }
+
+		//("activity" activity=[Activity|EString])?
+		public Group getGroup_4() { return cGroup_4; }
+
 		//"activity"
-		public Keyword getActivityKeyword_3_0() { return cActivityKeyword_3_0; }
+		public Keyword getActivityKeyword_4_0() { return cActivityKeyword_4_0; }
 
 		//activity=[Activity|EString]
-		public Assignment getActivityAssignment_3_1() { return cActivityAssignment_3_1; }
+		public Assignment getActivityAssignment_4_1() { return cActivityAssignment_4_1; }
 
 		//[Activity|EString]
-		public CrossReference getActivityActivityCrossReference_3_1_0() { return cActivityActivityCrossReference_3_1_0; }
+		public CrossReference getActivityActivityCrossReference_4_1_0() { return cActivityActivityCrossReference_4_1_0; }
 
 		//EString
-		public RuleCall getActivityActivityEStringParserRuleCall_3_1_0_1() { return cActivityActivityEStringParserRuleCall_3_1_0_1; }
+		public RuleCall getActivityActivityEStringParserRuleCall_4_1_0_1() { return cActivityActivityEStringParserRuleCall_4_1_0_1; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 	
 	
@@ -803,6 +835,92 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"Monthly"
 		public Keyword getMonthlyMonthlyKeyword_2_0() { return cMonthlyMonthlyKeyword_2_0; }
+	}
+
+	public class ActivitesElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "Activites");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cLabourEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cLabourLabourKeyword_0_0 = (Keyword)cLabourEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cSemisEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cSemisSemisKeyword_1_0 = (Keyword)cSemisEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cIrrigatgionEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cIrrigatgionIrrigatgionKeyword_2_0 = (Keyword)cIrrigatgionEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cFertilisationEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cFertilisationFertilisationKeyword_3_0 = (Keyword)cFertilisationEnumLiteralDeclaration_3.eContents().get(0);
+		private final EnumLiteralDeclaration cRecolteEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
+		private final Keyword cRecolteRecolteKeyword_4_0 = (Keyword)cRecolteEnumLiteralDeclaration_4.eContents().get(0);
+		private final EnumLiteralDeclaration cALIMENTATIONEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
+		private final Keyword cALIMENTATIONALIMENTATIONKeyword_5_0 = (Keyword)cALIMENTATIONEnumLiteralDeclaration_5.eContents().get(0);
+		private final EnumLiteralDeclaration cTraiteEnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
+		private final Keyword cTraiteTraiteKeyword_6_0 = (Keyword)cTraiteEnumLiteralDeclaration_6.eContents().get(0);
+		private final EnumLiteralDeclaration cSurveillanceagnelageEnumLiteralDeclaration_7 = (EnumLiteralDeclaration)cAlternatives.eContents().get(7);
+		private final Keyword cSurveillanceagnelageSurveillanceagnelageKeyword_7_0 = (Keyword)cSurveillanceagnelageEnumLiteralDeclaration_7.eContents().get(0);
+		private final EnumLiteralDeclaration cSurveillangevelageEnumLiteralDeclaration_8 = (EnumLiteralDeclaration)cAlternatives.eContents().get(8);
+		private final Keyword cSurveillangevelageSurveillangevelageKeyword_8_0 = (Keyword)cSurveillangevelageEnumLiteralDeclaration_8.eContents().get(0);
+		
+		//enum Activites:
+		//	labour | semis | irrigatgion | fertilisation | recolte | ALIMENTATION | traite | surveillanceagnelage |
+		//	surveillangevelage;
+		public EnumRule getRule() { return rule; }
+
+		//labour | semis | irrigatgion | fertilisation | recolte | ALIMENTATION | traite | surveillanceagnelage |
+		//surveillangevelage
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//labour
+		public EnumLiteralDeclaration getLabourEnumLiteralDeclaration_0() { return cLabourEnumLiteralDeclaration_0; }
+
+		//"labour"
+		public Keyword getLabourLabourKeyword_0_0() { return cLabourLabourKeyword_0_0; }
+
+		//semis
+		public EnumLiteralDeclaration getSemisEnumLiteralDeclaration_1() { return cSemisEnumLiteralDeclaration_1; }
+
+		//"semis"
+		public Keyword getSemisSemisKeyword_1_0() { return cSemisSemisKeyword_1_0; }
+
+		//irrigatgion
+		public EnumLiteralDeclaration getIrrigatgionEnumLiteralDeclaration_2() { return cIrrigatgionEnumLiteralDeclaration_2; }
+
+		//"irrigatgion"
+		public Keyword getIrrigatgionIrrigatgionKeyword_2_0() { return cIrrigatgionIrrigatgionKeyword_2_0; }
+
+		//fertilisation
+		public EnumLiteralDeclaration getFertilisationEnumLiteralDeclaration_3() { return cFertilisationEnumLiteralDeclaration_3; }
+
+		//"fertilisation"
+		public Keyword getFertilisationFertilisationKeyword_3_0() { return cFertilisationFertilisationKeyword_3_0; }
+
+		//recolte
+		public EnumLiteralDeclaration getRecolteEnumLiteralDeclaration_4() { return cRecolteEnumLiteralDeclaration_4; }
+
+		//"recolte"
+		public Keyword getRecolteRecolteKeyword_4_0() { return cRecolteRecolteKeyword_4_0; }
+
+		//ALIMENTATION
+		public EnumLiteralDeclaration getALIMENTATIONEnumLiteralDeclaration_5() { return cALIMENTATIONEnumLiteralDeclaration_5; }
+
+		//"ALIMENTATION"
+		public Keyword getALIMENTATIONALIMENTATIONKeyword_5_0() { return cALIMENTATIONALIMENTATIONKeyword_5_0; }
+
+		//traite
+		public EnumLiteralDeclaration getTraiteEnumLiteralDeclaration_6() { return cTraiteEnumLiteralDeclaration_6; }
+
+		//"traite"
+		public Keyword getTraiteTraiteKeyword_6_0() { return cTraiteTraiteKeyword_6_0; }
+
+		//surveillanceagnelage
+		public EnumLiteralDeclaration getSurveillanceagnelageEnumLiteralDeclaration_7() { return cSurveillanceagnelageEnumLiteralDeclaration_7; }
+
+		//"surveillanceagnelage"
+		public Keyword getSurveillanceagnelageSurveillanceagnelageKeyword_7_0() { return cSurveillanceagnelageSurveillanceagnelageKeyword_7_0; }
+
+		//surveillangevelage
+		public EnumLiteralDeclaration getSurveillangevelageEnumLiteralDeclaration_8() { return cSurveillangevelageEnumLiteralDeclaration_8; }
+
+		//"surveillangevelage"
+		public Keyword getSurveillangevelageSurveillangevelageKeyword_8_0() { return cSurveillangevelageSurveillangevelageKeyword_8_0; }
 	}
 
 	public class MonthElements extends AbstractEnumRuleElementFinder {
@@ -912,22 +1030,89 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"December"
 		public Keyword getDecemberDecemberKeyword_11_0() { return cDecemberDecemberKeyword_11_0; }
 	}
+
+	public class AnimalsElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "Animals");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cOvinEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cOvinOvinKeyword_0_0 = (Keyword)cOvinEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cBovinEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cBovinBovinKeyword_1_0 = (Keyword)cBovinEnumLiteralDeclaration_1.eContents().get(0);
+		
+		//enum Animals returns exploitation::Animals:
+		//	Ovin | Bovin;
+		public EnumRule getRule() { return rule; }
+
+		//Ovin | Bovin
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//Ovin
+		public EnumLiteralDeclaration getOvinEnumLiteralDeclaration_0() { return cOvinEnumLiteralDeclaration_0; }
+
+		//"Ovin"
+		public Keyword getOvinOvinKeyword_0_0() { return cOvinOvinKeyword_0_0; }
+
+		//Bovin
+		public EnumLiteralDeclaration getBovinEnumLiteralDeclaration_1() { return cBovinEnumLiteralDeclaration_1; }
+
+		//"Bovin"
+		public Keyword getBovinBovinKeyword_1_0() { return cBovinBovinKeyword_1_0; }
+	}
+
+	public class CerealElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "Cereal");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cCornEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cCornCornKeyword_0_0 = (Keyword)cCornEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cWheatEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cWheatWheatKeyword_1_0 = (Keyword)cWheatEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cSorghumEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cSorghumSorghumKeyword_2_0 = (Keyword)cSorghumEnumLiteralDeclaration_2.eContents().get(0);
+		
+		//enum Cereal returns exploitation::Cereal:
+		//	Corn | Wheat | Sorghum;
+		public EnumRule getRule() { return rule; }
+
+		//Corn | Wheat | Sorghum
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//Corn
+		public EnumLiteralDeclaration getCornEnumLiteralDeclaration_0() { return cCornEnumLiteralDeclaration_0; }
+
+		//"Corn"
+		public Keyword getCornCornKeyword_0_0() { return cCornCornKeyword_0_0; }
+
+		//Wheat
+		public EnumLiteralDeclaration getWheatEnumLiteralDeclaration_1() { return cWheatEnumLiteralDeclaration_1; }
+
+		//"Wheat"
+		public Keyword getWheatWheatKeyword_1_0() { return cWheatWheatKeyword_1_0; }
+
+		//Sorghum
+		public EnumLiteralDeclaration getSorghumEnumLiteralDeclaration_2() { return cSorghumEnumLiteralDeclaration_2; }
+
+		//"Sorghum"
+		public Keyword getSorghumSorghumKeyword_2_0() { return cSorghumSorghumKeyword_2_0; }
+	}
 	
 	private ActivityElements pActivity;
 	private AtelierElements pAtelier;
 	private PeriodiciteElements unknownRulePeriodicite;
-	private EStringElements pEString;
 	private Res_AllocElements pRes_Alloc;
 	private RuleElements pRule;
 	private DateElements pDate;
 	private Atelier_ImplElements pAtelier_Impl;
+	private ActivitesElements unknownRuleActivites;
 	private EIntegerObjectElements pEIntegerObject;
 	private ResourceTypeElements pResourceType;
+	private EStringElements pEString;
 	private RessourceElements pRessource;
 	private PredicatElements pPredicat;
 	private MonthElements unknownRuleMonth;
 	private ElevageElements pElevage;
 	private CultureElements pCulture;
+	private AnimalsElements unknownRuleAnimals;
+	private CerealElements unknownRuleCereal;
 	
 	private final Grammar grammar;
 
@@ -968,10 +1153,10 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Activity:
-	//	"Activity" "{" ("periodicite" periodicite=Periodicite)? ("Name" Name=EString)? ("atelier" "("
+	//	("Activity" "{" ("periodicite" periodicite=Periodicite)? ("activites" activites=Activites) ("atelier" "("
 	//	atelier+=[exploitation::Atelier|EString] ("," atelier+=[exploitation::Atelier|EString])* ")")? ("res_alloc" "{"
 	//	res_alloc+=Res_Alloc ("," res_alloc+=Res_Alloc)* "}")? ("rule" "{" rule+=Rule ("," rule+=Rule)* "}")? "fin" fin=Date
-	//	"debut" debut=Date "}";
+	//	"debut" debut=Date "}")*;
 	public ActivityElements getActivityAccess() {
 		return (pActivity != null) ? pActivity : (pActivity = new ActivityElements());
 	}
@@ -998,16 +1183,6 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public EnumRule getPeriodiciteRule() {
 		return getPeriodiciteAccess().getRule();
-	}
-
-	//EString returns ecore::EString:
-	//	STRING | ID;
-	public EStringElements getEStringAccess() {
-		return (pEString != null) ? pEString : (pEString = new EStringElements());
-	}
-	
-	public ParserRule getEStringRule() {
-		return getEStringAccess().getRule();
 	}
 
 	//Res_Alloc:
@@ -1050,6 +1225,17 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getAtelier_ImplAccess().getRule();
 	}
 
+	//enum Activites:
+	//	labour | semis | irrigatgion | fertilisation | recolte | ALIMENTATION | traite | surveillanceagnelage |
+	//	surveillangevelage;
+	public ActivitesElements getActivitesAccess() {
+		return (unknownRuleActivites != null) ? unknownRuleActivites : (unknownRuleActivites = new ActivitesElements());
+	}
+	
+	public EnumRule getActivitesRule() {
+		return getActivitesAccess().getRule();
+	}
+
 	//EIntegerObject returns ecore::EIntegerObject:
 	//	"-"? INT;
 	public EIntegerObjectElements getEIntegerObjectAccess() {
@@ -1068,6 +1254,16 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getResourceTypeRule() {
 		return getResourceTypeAccess().getRule();
+	}
+
+	//EString returns ecore::EString:
+	//	STRING | ID;
+	public EStringElements getEStringAccess() {
+		return (pEString != null) ? pEString : (pEString = new EStringElements());
+	}
+	
+	public ParserRule getEStringRule() {
+		return getEStringAccess().getRule();
 	}
 
 	//Ressource returns exploitation::Ressource:
@@ -1101,7 +1297,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Elevage returns exploitation::Elevage:
-	//	{exploitation::Elevage} "Elevage" "{" ("activity" activity=[Activity|EString])? "}";
+	//	{exploitation::Elevage} "Elevage" "{" ("animals" animals=Animals)? ("activity" activity=[Activity|EString])? "}";
 	public ElevageElements getElevageAccess() {
 		return (pElevage != null) ? pElevage : (pElevage = new ElevageElements());
 	}
@@ -1111,13 +1307,33 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Culture returns exploitation::Culture:
-	//	{exploitation::Culture} "Culture" "{" ("activity" activity=[Activity|EString])? "}";
+	//	{exploitation::Culture} "Culture" "{" ("cereals" cereals=Cereal)? ("activity" activity=[Activity|EString])? "}";
 	public CultureElements getCultureAccess() {
 		return (pCulture != null) ? pCulture : (pCulture = new CultureElements());
 	}
 	
 	public ParserRule getCultureRule() {
 		return getCultureAccess().getRule();
+	}
+
+	//enum Animals returns exploitation::Animals:
+	//	Ovin | Bovin;
+	public AnimalsElements getAnimalsAccess() {
+		return (unknownRuleAnimals != null) ? unknownRuleAnimals : (unknownRuleAnimals = new AnimalsElements());
+	}
+	
+	public EnumRule getAnimalsRule() {
+		return getAnimalsAccess().getRule();
+	}
+
+	//enum Cereal returns exploitation::Cereal:
+	//	Corn | Wheat | Sorghum;
+	public CerealElements getCerealAccess() {
+		return (unknownRuleCereal != null) ? unknownRuleCereal : (unknownRuleCereal = new CerealElements());
+	}
+	
+	public EnumRule getCerealRule() {
+		return getCerealAccess().getRule();
 	}
 
 	//terminal ID:

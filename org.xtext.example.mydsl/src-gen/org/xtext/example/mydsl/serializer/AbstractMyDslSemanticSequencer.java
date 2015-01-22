@@ -105,13 +105,13 @@ public abstract class AbstractMyDslSemanticSequencer extends AbstractDelegatingS
 	 * Constraint:
 	 *     (
 	 *         periodicite=Periodicite? 
-	 *         Name=EString? 
+	 *         activites=Activites 
 	 *         (atelier+=[Atelier|EString] atelier+=[Atelier|EString]*)? 
 	 *         (res_alloc+=Res_Alloc res_alloc+=Res_Alloc*)? 
 	 *         (rule+=Rule rule+=Rule*)? 
 	 *         fin=Date 
 	 *         debut=Date
-	 *     )
+	 *     )*
 	 */
 	protected void sequence_Activity(EObject context, Activity semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -129,7 +129,7 @@ public abstract class AbstractMyDslSemanticSequencer extends AbstractDelegatingS
 	
 	/**
 	 * Constraint:
-	 *     (activity=[Activity|EString]?)
+	 *     (cereals=Cereal? activity=[Activity|EString]?)
 	 */
 	protected void sequence_Culture(EObject context, Culture semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -147,7 +147,7 @@ public abstract class AbstractMyDslSemanticSequencer extends AbstractDelegatingS
 	
 	/**
 	 * Constraint:
-	 *     (activity=[Activity|EString]?)
+	 *     (animals=Animals? activity=[Activity|EString]?)
 	 */
 	protected void sequence_Elevage(EObject context, Elevage semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

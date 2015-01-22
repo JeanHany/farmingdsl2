@@ -3,4 +3,9 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Aspect
 Bundle-SymbolicName: fr.esir.lsi.aspect
 Bundle-Version: 1.0.0.qualifier
-Require-Bundle: fr.inria.diverse.k3.al.annotationprocessor.plugin;bundle-version="3.1.0"
+Require-Bundle: fr.inria.diverse.k3.al.annotationprocessor.plugin;bundle-version="3.0.0",
+ fr.esir.lsi.langage;bundle-version="0.1.0",
+ org.eclipse.acceleo.engine;bundle-version="3.5.1",
+ org.eclipse.emf.mwe.core
+Import-Package: org.eclipse.emf.common.util
+Export-Package: fr.esir.lsi.aspect

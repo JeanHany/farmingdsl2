@@ -108,29 +108,29 @@ ruleActivity returns [EObject current=null]
 	    }
 
 )
-))?(	otherlv_4='Name' 
+))?(	otherlv_4='activites' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getActivityAccess().getNameKeyword_3_0());
+    	newLeafNode(otherlv_4, grammarAccess.getActivityAccess().getActivitesKeyword_3_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getActivityAccess().getNameEStringParserRuleCall_3_1_0()); 
+	        newCompositeNode(grammarAccess.getActivityAccess().getActivitesActivitesEnumRuleCall_3_1_0()); 
 	    }
-		lv_Name_5_0=ruleEString		{
+		lv_activites_5_0=ruleActivites		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getActivityRule());
 	        }
        		set(
        			$current, 
-       			"Name",
-        		lv_Name_5_0, 
-        		"EString");
+       			"activites",
+        		lv_activites_5_0, 
+        		"Activites");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))?(	otherlv_6='atelier' 
+))(	otherlv_6='atelier' 
     {
     	newLeafNode(otherlv_6, grammarAccess.getActivityAccess().getAtelierKeyword_4_0());
     }
@@ -328,46 +328,10 @@ ruleActivity returns [EObject current=null]
     {
     	newLeafNode(otherlv_28, grammarAccess.getActivityAccess().getRightCurlyBracketKeyword_11());
     }
-)
+)*
 ;
 
 
-
-
-
-
-
-// Entry rule entryRuleEString
-entryRuleEString returns [String current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getEStringRule()); } 
-	 iv_ruleEString=ruleEString 
-	 { $current=$iv_ruleEString.current.getText(); }  
-	 EOF 
-;
-
-// Rule EString
-ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(    this_STRING_0=RULE_STRING    {
-		$current.merge(this_STRING_0);
-    }
-
-    { 
-    newLeafNode(this_STRING_0, grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0()); 
-    }
-
-    |    this_ID_1=RULE_ID    {
-		$current.merge(this_ID_1);
-    }
-
-    { 
-    newLeafNode(this_ID_1, grammarAccess.getEStringAccess().getIDTerminalRuleCall_1()); 
-    }
-)
-    ;
 
 
 
@@ -792,6 +756,42 @@ ruleResourceType returns [EObject current=null]
 
 
 
+// Entry rule entryRuleEString
+entryRuleEString returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getEStringRule()); } 
+	 iv_ruleEString=ruleEString 
+	 { $current=$iv_ruleEString.current.getText(); }  
+	 EOF 
+;
+
+// Rule EString
+ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(    this_STRING_0=RULE_STRING    {
+		$current.merge(this_STRING_0);
+    }
+
+    { 
+    newLeafNode(this_STRING_0, grammarAccess.getEStringAccess().getSTRINGTerminalRuleCall_0()); 
+    }
+
+    |    this_ID_1=RULE_ID    {
+		$current.merge(this_ID_1);
+    }
+
+    { 
+    newLeafNode(this_ID_1, grammarAccess.getEStringAccess().getIDTerminalRuleCall_1()); 
+    }
+)
+    ;
+
+
+
+
+
 
 
 
@@ -824,9 +824,31 @@ ruleElevage returns [EObject current=null]
     {
     	newLeafNode(otherlv_2, grammarAccess.getElevageAccess().getLeftCurlyBracketKeyword_2());
     }
-(	otherlv_3='activity' 
+(	otherlv_3='animals' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getElevageAccess().getActivityKeyword_3_0());
+    	newLeafNode(otherlv_3, grammarAccess.getElevageAccess().getAnimalsKeyword_3_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getElevageAccess().getAnimalsAnimalsEnumRuleCall_3_1_0()); 
+	    }
+		lv_animals_4_0=ruleAnimals		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getElevageRule());
+	        }
+       		set(
+       			$current, 
+       			"animals",
+        		lv_animals_4_0, 
+        		"Animals");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?(	otherlv_5='activity' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getElevageAccess().getActivityKeyword_4_0());
     }
 (
 (
@@ -836,16 +858,16 @@ ruleElevage returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getElevageAccess().getActivityActivityCrossReference_3_1_0()); 
+	        newCompositeNode(grammarAccess.getElevageAccess().getActivityActivityCrossReference_4_1_0()); 
 	    }
 		ruleEString		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))?	otherlv_5='}' 
+))?	otherlv_7='}' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getElevageAccess().getRightCurlyBracketKeyword_4());
+    	newLeafNode(otherlv_7, grammarAccess.getElevageAccess().getRightCurlyBracketKeyword_5());
     }
 )
 ;
@@ -882,9 +904,31 @@ ruleCulture returns [EObject current=null]
     {
     	newLeafNode(otherlv_2, grammarAccess.getCultureAccess().getLeftCurlyBracketKeyword_2());
     }
-(	otherlv_3='activity' 
+(	otherlv_3='cereals' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getCultureAccess().getActivityKeyword_3_0());
+    	newLeafNode(otherlv_3, grammarAccess.getCultureAccess().getCerealsKeyword_3_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getCultureAccess().getCerealsCerealEnumRuleCall_3_1_0()); 
+	    }
+		lv_cereals_4_0=ruleCereal		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getCultureRule());
+	        }
+       		set(
+       			$current, 
+       			"cereals",
+        		lv_cereals_4_0, 
+        		"Cereal");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?(	otherlv_5='activity' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getCultureAccess().getActivityKeyword_4_0());
     }
 (
 (
@@ -894,16 +938,16 @@ ruleCulture returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getCultureAccess().getActivityActivityCrossReference_3_1_0()); 
+	        newCompositeNode(grammarAccess.getCultureAccess().getActivityActivityCrossReference_4_1_0()); 
 	    }
 		ruleEString		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))?	otherlv_5='}' 
+))?	otherlv_7='}' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getCultureAccess().getRightCurlyBracketKeyword_4());
+    	newLeafNode(otherlv_7, grammarAccess.getCultureAccess().getRightCurlyBracketKeyword_5());
     }
 )
 ;
@@ -932,6 +976,67 @@ rulePeriodicite returns [Enumerator current=null]
 	{
         $current = grammarAccess.getPeriodiciteAccess().getMonthlyEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
         newLeafNode(enumLiteral_2, grammarAccess.getPeriodiciteAccess().getMonthlyEnumLiteralDeclaration_2()); 
+    }
+));
+
+
+
+// Rule Activites
+ruleActivites returns [Enumerator current=null] 
+    @init { enterRule(); }
+    @after { leaveRule(); }:
+((	enumLiteral_0='labour' 
+	{
+        $current = grammarAccess.getActivitesAccess().getLabourEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getActivitesAccess().getLabourEnumLiteralDeclaration_0()); 
+    }
+)
+    |(	enumLiteral_1='semis' 
+	{
+        $current = grammarAccess.getActivitesAccess().getSemisEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getActivitesAccess().getSemisEnumLiteralDeclaration_1()); 
+    }
+)
+    |(	enumLiteral_2='irrigatgion' 
+	{
+        $current = grammarAccess.getActivitesAccess().getIrrigatgionEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_2, grammarAccess.getActivitesAccess().getIrrigatgionEnumLiteralDeclaration_2()); 
+    }
+)
+    |(	enumLiteral_3='fertilisation' 
+	{
+        $current = grammarAccess.getActivitesAccess().getFertilisationEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_3, grammarAccess.getActivitesAccess().getFertilisationEnumLiteralDeclaration_3()); 
+    }
+)
+    |(	enumLiteral_4='recolte' 
+	{
+        $current = grammarAccess.getActivitesAccess().getRecolteEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_4, grammarAccess.getActivitesAccess().getRecolteEnumLiteralDeclaration_4()); 
+    }
+)
+    |(	enumLiteral_5='ALIMENTATION' 
+	{
+        $current = grammarAccess.getActivitesAccess().getALIMENTATIONEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_5, grammarAccess.getActivitesAccess().getALIMENTATIONEnumLiteralDeclaration_5()); 
+    }
+)
+    |(	enumLiteral_6='traite' 
+	{
+        $current = grammarAccess.getActivitesAccess().getTraiteEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_6, grammarAccess.getActivitesAccess().getTraiteEnumLiteralDeclaration_6()); 
+    }
+)
+    |(	enumLiteral_7='surveillanceagnelage' 
+	{
+        $current = grammarAccess.getActivitesAccess().getSurveillanceagnelageEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_7, grammarAccess.getActivitesAccess().getSurveillanceagnelageEnumLiteralDeclaration_7()); 
+    }
+)
+    |(	enumLiteral_8='surveillangevelage' 
+	{
+        $current = grammarAccess.getActivitesAccess().getSurveillangevelageEnumLiteralDeclaration_8().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_8, grammarAccess.getActivitesAccess().getSurveillangevelageEnumLiteralDeclaration_8()); 
     }
 ));
 
@@ -1011,6 +1116,50 @@ ruleMonth returns [Enumerator current=null]
 	{
         $current = grammarAccess.getMonthAccess().getDecemberEnumLiteralDeclaration_11().getEnumLiteral().getInstance();
         newLeafNode(enumLiteral_11, grammarAccess.getMonthAccess().getDecemberEnumLiteralDeclaration_11()); 
+    }
+));
+
+
+
+// Rule Animals
+ruleAnimals returns [Enumerator current=null] 
+    @init { enterRule(); }
+    @after { leaveRule(); }:
+((	enumLiteral_0='Ovin' 
+	{
+        $current = grammarAccess.getAnimalsAccess().getOvinEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getAnimalsAccess().getOvinEnumLiteralDeclaration_0()); 
+    }
+)
+    |(	enumLiteral_1='Bovin' 
+	{
+        $current = grammarAccess.getAnimalsAccess().getBovinEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getAnimalsAccess().getBovinEnumLiteralDeclaration_1()); 
+    }
+));
+
+
+
+// Rule Cereal
+ruleCereal returns [Enumerator current=null] 
+    @init { enterRule(); }
+    @after { leaveRule(); }:
+((	enumLiteral_0='Corn' 
+	{
+        $current = grammarAccess.getCerealAccess().getCornEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getCerealAccess().getCornEnumLiteralDeclaration_0()); 
+    }
+)
+    |(	enumLiteral_1='Wheat' 
+	{
+        $current = grammarAccess.getCerealAccess().getWheatEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getCerealAccess().getWheatEnumLiteralDeclaration_1()); 
+    }
+)
+    |(	enumLiteral_2='Sorghum' 
+	{
+        $current = grammarAccess.getCerealAccess().getSorghumEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_2, grammarAccess.getCerealAccess().getSorghumEnumLiteralDeclaration_2()); 
     }
 ));
 

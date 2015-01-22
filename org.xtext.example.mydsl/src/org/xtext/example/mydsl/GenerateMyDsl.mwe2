@@ -14,8 +14,8 @@ Workflow {
 	bean = StandaloneSetup {
 		scanClassPath  = true
 		platformUri = "${runtimeProject}/.."
-		registerGeneratedEPackage = "activity.ActivityPackage"
 		registerGeneratedEPackage = "exploitation.ExploitationPackage"
+		registerGeneratedEPackage = "activity.ActivityPackage"
 		registerGenModelFile = "platform:/resource/fr.esir.lsi.langage/model/Activity.genmodel"
 	}
 

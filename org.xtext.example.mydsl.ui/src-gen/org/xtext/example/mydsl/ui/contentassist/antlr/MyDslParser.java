@@ -40,7 +40,10 @@ public class MyDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAtelierAccess().getAlternatives(), "rule__Atelier__Alternatives");
 					put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
 					put(grammarAccess.getPeriodiciteAccess().getAlternatives(), "rule__Periodicite__Alternatives");
+					put(grammarAccess.getActivitesAccess().getAlternatives(), "rule__Activites__Alternatives");
 					put(grammarAccess.getMonthAccess().getAlternatives(), "rule__Month__Alternatives");
+					put(grammarAccess.getAnimalsAccess().getAlternatives(), "rule__Animals__Alternatives");
+					put(grammarAccess.getCerealAccess().getAlternatives(), "rule__Cereal__Alternatives");
 					put(grammarAccess.getActivityAccess().getGroup(), "rule__Activity__Group__0");
 					put(grammarAccess.getActivityAccess().getGroup_2(), "rule__Activity__Group_2__0");
 					put(grammarAccess.getActivityAccess().getGroup_3(), "rule__Activity__Group_3__0");
@@ -69,10 +72,12 @@ public class MyDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPredicatAccess().getGroup(), "rule__Predicat__Group__0");
 					put(grammarAccess.getElevageAccess().getGroup(), "rule__Elevage__Group__0");
 					put(grammarAccess.getElevageAccess().getGroup_3(), "rule__Elevage__Group_3__0");
+					put(grammarAccess.getElevageAccess().getGroup_4(), "rule__Elevage__Group_4__0");
 					put(grammarAccess.getCultureAccess().getGroup(), "rule__Culture__Group__0");
 					put(grammarAccess.getCultureAccess().getGroup_3(), "rule__Culture__Group_3__0");
+					put(grammarAccess.getCultureAccess().getGroup_4(), "rule__Culture__Group_4__0");
 					put(grammarAccess.getActivityAccess().getPeriodiciteAssignment_2_1(), "rule__Activity__PeriodiciteAssignment_2_1");
-					put(grammarAccess.getActivityAccess().getNameAssignment_3_1(), "rule__Activity__NameAssignment_3_1");
+					put(grammarAccess.getActivityAccess().getActivitesAssignment_3_1(), "rule__Activity__ActivitesAssignment_3_1");
 					put(grammarAccess.getActivityAccess().getAtelierAssignment_4_2(), "rule__Activity__AtelierAssignment_4_2");
 					put(grammarAccess.getActivityAccess().getAtelierAssignment_4_3_1(), "rule__Activity__AtelierAssignment_4_3_1");
 					put(grammarAccess.getActivityAccess().getRes_allocAssignment_5_2(), "rule__Activity__Res_allocAssignment_5_2");
@@ -92,8 +97,10 @@ public class MyDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getResourceTypeAccess().getResourceAssignment_4_1(), "rule__ResourceType__ResourceAssignment_4_1");
 					put(grammarAccess.getRessourceAccess().getNameAssignment_2(), "rule__Ressource__NameAssignment_2");
 					put(grammarAccess.getRessourceAccess().getResourceTypeAssignment_4_1(), "rule__Ressource__ResourceTypeAssignment_4_1");
-					put(grammarAccess.getElevageAccess().getActivityAssignment_3_1(), "rule__Elevage__ActivityAssignment_3_1");
-					put(grammarAccess.getCultureAccess().getActivityAssignment_3_1(), "rule__Culture__ActivityAssignment_3_1");
+					put(grammarAccess.getElevageAccess().getAnimalsAssignment_3_1(), "rule__Elevage__AnimalsAssignment_3_1");
+					put(grammarAccess.getElevageAccess().getActivityAssignment_4_1(), "rule__Elevage__ActivityAssignment_4_1");
+					put(grammarAccess.getCultureAccess().getCerealsAssignment_3_1(), "rule__Culture__CerealsAssignment_3_1");
+					put(grammarAccess.getCultureAccess().getActivityAssignment_4_1(), "rule__Culture__ActivityAssignment_4_1");
 				}
 			};
 		}

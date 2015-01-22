@@ -3,6 +3,11 @@
  */
 package org.xtext.example.mydsl.generator;
 
+import activity.Activity;
+import com.google.common.collect.Iterators;
+import java.util.Iterator;
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
@@ -15,5 +20,10 @@ import org.eclipse.xtext.generator.IGenerator;
 @SuppressWarnings("all")
 public class MyDslGenerator implements IGenerator {
   public void doGenerate(final Resource resource, final IFileSystemAccess fsa) {
+    TreeIterator<EObject> _allContents = resource.getAllContents();
+    final Iterator<Activity> res = Iterators.<Activity>filter(_allContents, Activity.class);
+    Activity _next = res.next();
+    final String tst = _next.parcours();
+    fsa.generateFile("greetings.txt", tst);
   }
 }

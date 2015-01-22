@@ -6,8 +6,14 @@ import exploitation.Ressource
 @Aspect (className = Ressource)
 class ResourceAspect {
 	
-	def void simulate(){
-		
+	def simulate(Visiteur vist){
+		val type = _self.resourceType.name
+		switch (type) {
+			case "tracteur" : vist.setTracteur(vist.getTracteur+1)
+			case "humain" : vist.setHumain(vist.getHumain+1)
+			default : new Visiteur
+		}
+		vist
 	}
 	
 }

@@ -5,5 +5,9 @@ import exploitation.Culture
 
 @Aspect (className=Culture)
 class CultureAspect {
-		
+	
+	def simulate(){
+		true
+	}
+	
 }

@@ -1,0 +1,25 @@
+Activity {
+	
+	activites ALIMENTATION 
+	fin Date { day 10  month April}
+	debut Date { day 12 month February}
+	
+}
+
+Activity{	
+	activites labour 
+	fin Date { day 30 month March}
+	debut Date { day 1 month January}	
+}
+
+Activity{
+	activites recolte
+	fin Date { day 15 month October}
+	debut Date { day 1 month October}
+}
+
+Activity{
+	activites semis
+	fin Date { day 15 month May}
+	debut Date { day 1 month May}
+}
